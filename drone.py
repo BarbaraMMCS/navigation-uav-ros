@@ -8,10 +8,10 @@ def nothing(x):
 
 
 # Load file
-# capture = cv2.VideoCapture("/home/barbara/Videos/Drone/DJI_0004.MOV")
+capture = cv2.VideoCapture("/home/barbara/Videos/Drone/DJI_0004.MOV")
 
 # Live webcam, 0 = first webcam, 1 = next one
-capture = cv2.VideoCapture(0)
+#capture = cv2.VideoCapture(0)
 
 
 # Set FPS for files and drone feed
