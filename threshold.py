@@ -1,8 +1,10 @@
 import cv2
 
+
 # useless but needed
 def nothing(x):
     pass
+
 
 # load image in gray
 image = cv2.imread("/home/barbara/Pictures/NikonDF_0026.jpg", cv2.IMREAD_GRAYSCALE)
@@ -32,12 +34,12 @@ while True:
     _, th_to_zero_inv = cv2.threshold(image, value_th, 255, cv2.THRESH_TOZERO_INV)
 
     # Show window
-    cv2.imshow("Image", image)
     cv2.imshow("th_binary", th_binary)
     cv2.imshow("th_binary_inv", th_binary_inv)
-    cv2.imshow("th_trunc", th_trunc)
     cv2.imshow("th_to_zero", th_to_zero)
     cv2.imshow("th_to_zero_inv", th_to_zero_inv)
+    cv2.imshow("th_trunc", th_trunc)
+    cv2.imshow("Image", image)
 
     # Quit Esc and timing
     k = cv2.waitKey(100) & 0xFF

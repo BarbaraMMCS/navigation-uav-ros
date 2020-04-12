@@ -13,6 +13,7 @@ def nothing(x):
 # Live webcam, 0 = first webcam, 1 = next one
 capture = cv2.VideoCapture(0)
 
+
 # Set FPS for files and drone feed
 frame_rate = 15
 # WEBCAM fps = frame_rate times 1000 -----> Because every loop = 1 ms. Use in WaitKey(fps)
@@ -192,7 +193,6 @@ while capture.isOpened():
             # Data print
             # print(final_frame.shape)
             print("Frame number: ", total_frames, ",  Fps: ", fps, " Time elapse: ", time_elapsed)
-
 
             # Quit key q
             if cv2.waitKey(fps) & 0xFF == ord("q"):
