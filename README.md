@@ -1,5 +1,4 @@
-# UAV_navigation_ROS
+# Project : Localization and detection of landmarks for supporting UAV navigation
 
 <img src="images/ROS_diagram_1.png" width="720">
           
-![](images/ROS_diagram_1.png.png)
