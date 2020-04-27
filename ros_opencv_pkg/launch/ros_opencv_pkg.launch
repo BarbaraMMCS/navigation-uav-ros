@@ -3,7 +3,6 @@
 <launch>
 
   <node name="node" pkg="ros_opencv_pkg" type="node.py" output="screen">
-	<param name="fps" value="30" type="Int"/>
 
   </node>
 
