@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import sys
 import cv2
 from sensor_msgs.msg import Image, CameraInfo
@@ -61,11 +63,11 @@ class cvBridgeDemo():
         print("Shutting down vision node.")
         cv2.destroyAllWindows()
 
-    def main(args):
-        try:
-            cvBridgeDemo()
+def main(args):
+    try:
+        cvBridgeDemo()
         rospy.spin()
-        except KeyboardInterrupt:
+    except KeyboardInterrupt:
         print("Shutting down vision node.")
         cv2.DestroyAllWindows()
 
