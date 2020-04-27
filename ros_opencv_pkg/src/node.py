@@ -11,7 +11,7 @@ def publisher():
 
 
     while not rospy.is_shutdown():
-        str = "Publishing message %s" % rospy.get_time()
+        str = "Time received: %s" % rospy.get_time()
         pub.publish(str)
         rospy.loginfo(str)
         rate.sleep()
