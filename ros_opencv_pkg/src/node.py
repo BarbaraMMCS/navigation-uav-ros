@@ -4,14 +4,12 @@ import rospy
 from std_msgs.msg import String
 
 
-
 def publisher():
     pub = rospy.Publisher('message', String, queue_size=10)
     rate = rospy.Rate(10)  #10HZ
 
-
     while not rospy.is_shutdown():
-        str = "Time received: %s" % rospy.get_time()
+        str = "Time: %s" % rospy.get_time()
         pub.publish(str)
         rospy.loginfo(str)
         rate.sleep()
@@ -24,7 +22,6 @@ def callback(data):
 def subscriber():
     sub = rospy.Subscriber('message', String, callback)
     rospy.spin()
-
 
 
 if __name__ == '__main__':
