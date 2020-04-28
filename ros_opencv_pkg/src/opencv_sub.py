@@ -18,7 +18,7 @@ def callback(data):
 
 def subscriber():
     rospy.init_node("opencv_sub", anonymous=True)
-    sub = rospy.Subscriber('image_topic', Image, callback, queue_size = 1)
+    sub = rospy.Subscriber('image_topic', Image, callback, queue_size=1)
     rospy.spin()
 
 
