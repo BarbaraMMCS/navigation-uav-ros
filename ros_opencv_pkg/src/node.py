@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# simple publisher subcriber
+
 import rospy
 from std_msgs.msg import String
 
