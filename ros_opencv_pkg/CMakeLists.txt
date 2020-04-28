@@ -19,11 +19,10 @@ include_directories(
 
 add_executable(ros_opencv_pkg src/video.cpp)
 
-target_link_libraries(ros_opencv_pkg
+target_link_libraries(ros_opencv_pkg opencv_core opencv_highgui
    ${OpenCV_LIBRARIES}
    ${catkin_LIBRARIES}
 )
-
 
 catkin_package(
   LIBRARIES ros_opencv_pkg
