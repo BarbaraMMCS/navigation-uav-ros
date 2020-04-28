@@ -21,7 +21,3 @@ add_executable(ros_opencv_pkg src/opencv_pub.cpp)
 target_link_libraries(ros_opencv_pkg opencv_core opencv_highgui
    ${catkin_LIBRARIES}
 )
-
-
-
-
