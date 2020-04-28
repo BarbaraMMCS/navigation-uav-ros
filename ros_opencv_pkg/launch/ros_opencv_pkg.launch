@@ -2,7 +2,8 @@
 
 <launch>
 
-  <node name="node" pkg="ros_opencv_pkg" type="node.py" output="screen">
+  <node name="pub" pkg="ros_opencv_pkg" type="opencv_pub.cpp" output="screen">
+  <node name="sub" pkg="ros_opencv_pkg" type="opencv_sub.py" output="screen">
 
   </node>
 
