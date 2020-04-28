@@ -9,14 +9,14 @@ using namespace cv;
 class cam_test{
     public:
         cam_test(){
-            videoCapture cap(CV_CAP_ANY);
+            VideoCapture cap(CV_CAP_ANY);
                 if (!cap.isOpened())
                 {
                     cout << "Cannot open video" << endl;
                 }
 
-                double dwidht = cap.get((CV_CAP_PROP_FRAME_WIDTH);
-                double dheight = cap.get((CV_CAP_PROP_FRAME_HEIGHT);
+                double dwidht = cap.get(CV_CAP_PROP_FRAME_WIDTH);
+                double dheight = cap.get(CV_CAP_PROP_FRAME_HEIGHT);
 
                 cout << "Frame size: " << dwidht << " x " << dheight <<  endl;
 
@@ -26,10 +26,10 @@ class cam_test{
                 {
                     Mat frame;
 
-                    bool bsuccess = cap.read(frame);
+                    bool bSuccess = cap.read(frame);
                         if (!bSuccess)
                         {
-                            cout <<< "Cannot read camera stream" << endl;
+                            cout << "Cannot read camera stream" << endl;
                             break;
                         }
                         imshow("MyVideo", frame);
@@ -40,21 +40,16 @@ class cam_test{
                         }
                     }
             }
-            -cam_test(){
-                cvDestroyWindow("Camera_Output")
-            }
-        }
 
+            ~cam_test(){
+                cvDestroyWindow("Camera_Output");
+            }
 };
 
-int main(int argc, char ***argv)
+int main(int argc, char **argv)
 {
-    ros::init(argc, argv, "video.cpp");
+    ros::init(argc, argv, "video");
     cam_test cam_object;
 
-    ROS_INFO("video works!")
+    ROS_INFO("video works!");
 }
-
-
-
-
