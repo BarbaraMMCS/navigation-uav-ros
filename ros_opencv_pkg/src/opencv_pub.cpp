@@ -11,7 +11,7 @@ int main(int argc, char** argv)
     image_transport::ImageTransport it(nodeHandle);
     image_transport::Publisher pub = it.advertise("image_topic", 1);
     cv::VideoCapture cap;
-    bool is_cam_ok = true,
+    bool is_cam_ok = true;
     if(!cap.open(1))
     {
         is_cam_ok = false;
@@ -24,7 +24,7 @@ int main(int argc, char** argv)
         {
             cap >> image;
 
-            sensor_msgs::ImagePtr message = cv_bridge::CvImage(std_msgs::Header(), "mono8", image).to ImageMsg();
+            sensor_msgs::ImagePtr message = cv_bridge::CvImage(std_msgs::Header(), "mono8", image).toImageMsg();
 
             pub.publish(message);
             ros::spinOnce();
