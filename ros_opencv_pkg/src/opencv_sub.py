@@ -7,10 +7,10 @@ from sensor_msgs.msg import Image
 
 
 def callback(data):
-    capture = cv2.VideoCapture("/home/barbara/Videos/Drone/DJI_0004.MOV")
+    capture = cv2.VideoCapture(0)
 
 
-    while (capture.isOpened()):
+    while capture.isOpened():
         # captures the frame
         ret, frame = capture.read()
 
