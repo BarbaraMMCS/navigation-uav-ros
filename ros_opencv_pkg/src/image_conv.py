@@ -35,11 +35,6 @@ def numpy_to_msg(img):
 
 def callback(data):
    img = msg_to_numpy(data)
-
-   (rows, cols, channels) = img.shape
-   if cols > 60 and rows > 60:
-       cv2.circle(img, (50, 50), 10, 255)
-
    cv2.imshow("pyramid_rock", img)
    cv2.waitKey(3)
 
@@ -70,8 +65,6 @@ if __name__ == '__main__':
         rospy.init_node("image", anonymous= True)
         publisher()
         subscriber()
-    except rospy.ROSInterruptException:
-        pass
     except KeyboardInterrupt:
-        pass
+        print("Shutting down")
     cv2.destroyAllWindows()
