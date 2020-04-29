@@ -60,7 +60,7 @@ def msg_to_numpy(data):
 
 
 def numpy_to_msg(img):     
-    data = bridge.cv2_to_imgmsg(img, "rgb8")
+    data = bridge.cv2_to_imgmsg(img, "bgr8")
     return data
 
 
@@ -82,8 +82,8 @@ def publisher():
 
 def subscriber():
     sub = rospy.Subscriber("image_pub", Image, callback, queue_size=1)
-    image = msg_to_numpy(sub)
-    image_process(image)
+    raw_img = msg_to_numpy(sub)
+    image_process(raw_img)
 
     rospy.spin()
 
