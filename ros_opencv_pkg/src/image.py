@@ -55,7 +55,7 @@ def image_process(image):
 
 
 def msg_to_numpy(data):
-    raw_img = self.__bridge.imgmsg_to_cv2(data, "bgr8")
+    raw_img = bridge.imgmsg_to_cv2(data, "bgr8")
     return raw_img
 
 
