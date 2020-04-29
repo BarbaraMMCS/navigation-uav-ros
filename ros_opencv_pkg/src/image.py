@@ -53,6 +53,10 @@ def image_process(image):
         cv2.imshow("pyramid_rock", image)
         cv2.imshow("roi", roi)
 
+        # Quit Esc and timing
+        k = cv2.waitKey(0) & 0xFF
+        if k == 27:  # esc
+            break
 
 def msg_to_numpy(data):
     raw_img = bridge.imgmsg_to_cv2(data, "bgr8")
@@ -97,10 +101,5 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         pass
     except KeyboardInterrupt:
-    	pass
+        pass
     cv2.destroyAllWindows()
-
-
-
-
-
