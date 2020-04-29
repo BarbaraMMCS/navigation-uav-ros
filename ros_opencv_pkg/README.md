@@ -1,4 +1,4 @@
-To launch node from terminal:
+To launch nodes from terminal:
 
 Simple node:
 
