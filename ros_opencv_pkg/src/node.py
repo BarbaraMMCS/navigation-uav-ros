@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# simple publisher subcriber
+# simple publisher subcriber test
 
 import rospy
 from std_msgs.msg import String
@@ -18,7 +18,7 @@ def publisher():
 
 
 def callback(data):
-    rospy.loginfo(rospy.get_caller_id() + "received: %s", data.data)
+    rospy.loginfo(rospy.get_caller_id() + "   received: %s", data.data)
 
 
 def subscriber():
