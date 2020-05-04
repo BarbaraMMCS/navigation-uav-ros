@@ -6,23 +6,6 @@ from sensor_msgs.msg import Image
 from cv_bridge import CvBridge
 
 
-def image_process(image):
-    # Image size
-    shape = image.shape
-    print(shape)
-
-    while True:
-
-        # image resize
-        width = 720
-        height = 480
-        dim = (width, height)
-        img = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
-
-        return img
-
-
-
 def msg_to_numpy(data):
     raw_img = bridge.imgmsg_to_cv2(data, "bgr8")
     return raw_img
@@ -54,8 +37,6 @@ def publisher():
 def subscriber():
     sub = rospy.Subscriber("image_pub", Image, callback, queue_size=1)
     raw_img = msg_to_numpy(sub)
-    image_process(raw_img)
-
     rospy.spin()
 
 

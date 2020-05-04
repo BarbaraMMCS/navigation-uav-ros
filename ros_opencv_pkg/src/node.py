@@ -23,13 +23,14 @@ def callback(data):
 
 def subscriber():
     sub = rospy.Subscriber('message', String, callback)
-    rospy.spin()
+
 
 
 if __name__ == '__main__':
     try:
         rospy.init_node("node", anonymous= True)
-        publisher()
         subscriber()
+        publisher()
+        rospy.spin()
     except rospy.ROSInterruptException:
         pass
