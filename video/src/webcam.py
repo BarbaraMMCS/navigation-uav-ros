@@ -19,13 +19,13 @@ def image_callback(img_msg):
 
     try:
         cv_image = bridge.imgmsg_to_cv2(img_msg, "passthrough")
-    except CvBridgeError, e:
-        print(e)
+    except CvBridgeError as error:
+        print(error)
 
     show_image(cv_image)
 
 
-sub_image = rospy.Subscriber("/cv_camera/image_raw", Image, image_callback)
+sub_image = rospy.Subscriber("/cv_camera_node/image_raw", Image, image_callback)
 cv.namedWindow("Image Window", 1)
 
 while not rospy.is_shutdown():

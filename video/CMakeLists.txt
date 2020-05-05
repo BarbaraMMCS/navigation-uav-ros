@@ -1,23 +1,15 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(video)
-
+project(image)
 
 find_package(catkin REQUIRED COMPONENTS
+  roslaunch
   cv_bridge
   rospy
+  sensor_msgs
   std_msgs
 )
 
-
-
-catkin_package( 
-  LIBRARIES video
-  CATKIN_DEPENDS  
-  cv_bridge
-  rospy
-  message_runtime
-  std_msgs
-)
-
+find_package(OpenCV REQUIRED)
 
 include_directories(${catkin_INCLUDE_DIRS})
+
