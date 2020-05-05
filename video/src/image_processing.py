@@ -11,17 +11,17 @@ cap = cv2.VideoCapture("/home/barbara/Videos/Drone/DJI_0004.MOV")
 
 def callback(data):
 
-	data_ros = bridge.imgmsg_to_cv2(data,desired_encoding="passthrough")		
+	image = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
 	_,frame = cap.read()		
 
-	cv2.imshow('frame',frame)
+	cv2.imshow('frame', frame)
 	
 	if cv2.waitKey(25) & 0xFF == ord('q'):
 		cv2.destroyAllWindows()
 
 def listener():
-	rospy.init_node("Node2",anonymous=True)
-	rospy.Subscriber("/image_raw",Image,callback)	
+	rospy.init_node("image_processing", anonymous=True)
+	rospy.Subscriber("/image_raw", Image, callback)
 	rospy.loginfo("Subscriber is starting")		
 	rospy.spin()
 
