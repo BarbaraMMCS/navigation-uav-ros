@@ -1,10 +1,10 @@
 # Project : Localization and detection of landmarks for supporting UAV navigation
 
-<img src="images/ROS_diagram_1.png" width="1080">
+<img src="media/ROS_diagram_1.png" width="1080">
           
-<img src="images/pyramid_rock.jpg" width="1080">
+<img src="media/pyramid_rock.jpg" width="1080">
  
-<img src="images/new_save.png" width="1080">
+<img src="media/new_save.png" width="1080">
 
 
 
