@@ -12,6 +12,7 @@
 Package needed are : 
 
 vision_opencv : http://wiki.ros.org/vision_opencv
+
 cv_camera : http://wiki.ros.org/cv_camera
 
 
