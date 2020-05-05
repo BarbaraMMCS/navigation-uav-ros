@@ -3,7 +3,7 @@
 
 <launch>
 
-  <node name="image" pkg="image" type="image.py" output="screen">
+  <node name="treshold" pkg="image" type="treshold.py" output="screen">
   </node>
 
 </launch>

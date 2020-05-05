@@ -3,7 +3,7 @@
 
 <launch>
 
-  <node name="image" pkg="image" type="image.py" output="screen">
+  <node name="target" pkg="image" type="target.py" output="screen">
   </node>
 
 </launch>

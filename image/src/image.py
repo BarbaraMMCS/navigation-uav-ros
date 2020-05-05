@@ -33,25 +33,25 @@ def publisher():
 def callback(data):
     try:
         img = br.imgmsg_to_cv2(data, desired_encoding="passthrough")
-
-        # image resize
-        width = 1920 / 2
-        height = 1080 / 2
-        dim = (width, height)
-        image = cv.resize(img, dim, interpolation=cv.INTER_AREA)
-
-        # Gray filter
-        # gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
-
-        while True:
-
-            # Show window
-            cv.imshow("Image", image)
-
-            cv.waitKey(0)
-
     except CvBridgeError as error:
         print(error)
+
+
+    # image resize
+    width = 1920 / 2
+    height = 1080 / 2
+    dim = (width, height)
+    image = cv.resize(img, dim, interpolation=cv.INTER_AREA)
+
+    # Gray filter
+    # gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
+
+    while True:
+
+        # Show window
+        cv.imshow("Image", image)
+        cv.waitKey(3)
+
 
 if __name__ == '__main__':
     br = CvBridge()
