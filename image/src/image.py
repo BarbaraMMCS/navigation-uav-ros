@@ -13,15 +13,15 @@ def subscriber():
 	
 
 def callback(data):
-   data = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
-   cv2.imshow("Image", data_img)
+   img = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
+   cv2.imshow("image", img)
    if cv2.waitKey(25) & 0xFF == ord('q'):
 	cv2.destroyAllWindows()
 
 
 
 def publisher():
-    pub = rospy.Publisher("image", Image, queue_size=1)
+    pub = rospy.Publisher("image", Image, queue_size=10)
     rate = rospy.Rate(10)  #10HZ
     rospy.loginfo("Publisher is publishing")		
 
