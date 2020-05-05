@@ -21,15 +21,21 @@ cv_camera : http://wiki.ros.org/cv_camera
 
 
 
-To launch nodes from terminal:
+---------To launch nodes from terminal:
+
+
 
 roslaunch image node.launch
+
 roslaunch image image.launch
+
 roslaunch image target.launch
+
 roslaunch image treshold.launch
 
 
 
 roslaunch video video.launch
+
 roslaunch video webcam.launch
 
