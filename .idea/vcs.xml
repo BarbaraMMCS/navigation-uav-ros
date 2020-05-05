@@ -3,5 +3,7 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/uav" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/usb_cam" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vision_opencv" vcs="Git" />
   </component>
 </project>
