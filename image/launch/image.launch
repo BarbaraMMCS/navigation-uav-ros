@@ -1,10 +1,9 @@
 <!-- Launcher: ros_opencv_pkg -->
 <!-- simple publisher subscriber -->
 
-
 <launch>
 
-  <node name="image" pkg="ros_opencv_pkg" type="image_conv.py" output="screen">
+  <node name="image" pkg="image" type="image.py" output="screen">
 
   </node>
 

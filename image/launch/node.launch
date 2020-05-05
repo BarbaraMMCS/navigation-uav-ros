@@ -4,7 +4,7 @@
 
 <launch>
 
-  <node name="node" pkg="ros_opencv_pkg" type="node.py" output="screen">
+  <node name="node" pkg="image" type="node.py" output="screen">
 
   </node>
 
