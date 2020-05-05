@@ -3,9 +3,9 @@ import numpy as np
 
 capture = cv2.VideoCapture(0)
 # if video from a file : change 0 by name.extension, if multiple camera change to 1
-fourcc = cv2.VideoWriter_fourcc(*"XVID")
+# fourcc = cv2.VideoWriter_fourcc(*"XVID")
 # codec to save
-output = cv2.VideoWriter("output.avi", fourcc, 15.0, (640, 480))
+# output = cv2.VideoWriter("output.avi", fourcc, 15.0, (640, 480))
 # create instances output (name to save, codec, fps, size)
 
 
@@ -18,7 +18,7 @@ while (capture.isOpened()):
         hsv_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
         # Because hsv is easier to deal with
 
-        output.write(frame)
+        # output.write(frame)
         # saves the file
 
         # color filters
@@ -52,7 +52,6 @@ while (capture.isOpened()):
 
         # Blur filter
         kernel = np.ones((15, 15), np.float32)/225
-
         smoothed = cv2.filter2D(frame, -1, kernel)
         blur = cv2.GaussianBlur(frame, (15, 15), 0)
         median = cv2.medianBlur(frame, 15)
@@ -77,5 +76,5 @@ while (capture.isOpened()):
         break
 
 capture.release()
-output.release()
+# output.release()
 cv2.destroyAllWindows()

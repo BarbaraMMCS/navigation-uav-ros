@@ -1,25 +1,20 @@
 import cv2
 
 
-image = cv2.imread("ROS_diagram.png", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("/home/barbara/Pictures/pyramid_rock.jpg", 0)
 
 # Image size
-shape = image.shape
-print(shape)
-width, height = shape
+width, height = image.shape
 
 # image resize
-
-factor = 0.20
-width_r, height_r = width*factor, height*factor
-print(width_r, height_r)
-dim = (int(width_r), int(height_r))
-
+width = 1920
+height = 1080
+dim = (width, height)
 image = cv2.resize(image, dim, interpolation=cv2.INTER_AREA)
 
 while True:
 
-    cv2.imshow("ROS_diagram.png", image)
+    cv2.imshow("pyramid_rock.png", image)
 
     # Quit Esc and timing
     k = cv2.waitKey(100) & 0xFF
@@ -28,6 +23,6 @@ while True:
 
     # press "s" to save
     if k == ord("s"):
-        cv2.imwrite("../images/ROS_diagram_1.png", image)
+        cv2.imwrite("../images/new_save.png", image)
 
 cv2.destroyAllWindows()
