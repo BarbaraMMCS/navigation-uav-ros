@@ -15,6 +15,7 @@ Bachelor semester project 2: part1
 <img src="media/ROS_diagram_1.png" width="1080">
           
 ### install workspace :
+
 ```
 mkdir -p ~/catkin_ws/src
 
@@ -27,14 +28,11 @@ source devel/setup.bash
 
 ### install this repository :
 ```
-
 cd ~/catkin_ws/src
 
 git clone https://github.com/BarbaraMMCS/UAV_navigation_ROS.git
 
 catkin_make
-
-source devel/setup.bash
 
 ```
 ### install Package : 
