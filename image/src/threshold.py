@@ -87,7 +87,7 @@ def callback(data):
 if __name__ == '__main__':
     br = CvBridge()
     # cv.imread("...", 0) for greyscale
-    data = cv.imread("/home/barbara/Pictures/pyramid_rock.jpg")
+    data = cv.imread("/home/barbara/catkin_ws/src/UAV_navigation_ROS/media/pyramid_rock.jpg")
     if (data.any()):
         rospy.init_node("image", anonymous=True)
         subscriber()

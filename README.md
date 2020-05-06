@@ -27,11 +27,9 @@ roslaunch image node.launch
 
 roslaunch image image.launch
 
+roslaunch image threshold.launch
+
 roslaunch image target.launch
-
-roslaunch image treshold.launch
-
-
 
 roslaunch video video.launch
 
