@@ -32,6 +32,8 @@ cd ~/catkin_ws/src
 
 git clone https://github.com/BarbaraMMCS/UAV_navigation_ROS.git
 
+cd ~/catkin_ws/
+
 catkin_make
 
 ```
