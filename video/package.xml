@@ -2,7 +2,7 @@
 
 <package format="2">
 
-  <name>image</name>
+  <name>video</name>
   <version>0.0.1</version>
   <description>View image and video</description>
   <maintainer email="barbara.symeon.001@uni.lu">Barbara Symeon</maintainer>
