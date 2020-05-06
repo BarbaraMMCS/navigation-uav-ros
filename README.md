@@ -10,15 +10,10 @@ Bachelor semester project 2: part1
 
 3. Implement nodes from prerecorded rosbag containing images, localization and other sensor data and display nodes in a more advanced way.
 
-### ros
+### Ros
 
 <img src="media/ROS_diagram_1.png" width="1080">
           
-<img src="media/pyramid_rock.jpg" width="1080">
- 
-<img src="media/new_save.png" width="1080">
-
-
 ### install workspace :
 ```
 mkdir -p ~/catkin_ws/src
@@ -71,9 +66,12 @@ roslaunch image target.launch
 ```
 ```
 roslaunch video video.launch
-
 ```
 ```
 roslaunch video webcam.launch
 ```
+
+<img src="media/pyramid_rock.jpg" width="1080">
+ 
+<img src="media/new_save.png" width="1080">
 
