@@ -59,19 +59,11 @@ roslaunch image threshold.launch
 roslaunch image target.launch
 ```
 ```
-roslaunch image target.launch
-```
-```
-roslaunch image target.launch
-```
-```
 roslaunch video video.launch
 ```
 ```
 roslaunch video webcam.launch
 ```
-
-<img src="media/pyramid_rock.jpg" width="1080">
  
 <img src="media/new_save.png">
 
