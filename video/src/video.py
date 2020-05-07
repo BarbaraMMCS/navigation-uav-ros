@@ -1,9 +1,9 @@
 #!/usr/bin/env python
+
 import cv2
 import rospy
 from cv_bridge import CvBridge,CvBridgeError
 from sensor_msgs.msg import Image
-
 
 
 video_path = "/home/barbara/Videos/Drone/DJI_0004.MOV"
@@ -18,13 +18,11 @@ def publisher():
     rospy.loginfo("Publisher is starting")
 
     while cap.isOpened():
-
-	_,frame=cap.read()
-	image = bridge.cv2_to_imgmsg(frame, encoding="passthrough")
-	pub.publish(image)
-	rate.sleep()
-				
-    cap.release()
+    	_,frame=cap.read()
+	    image = bridge.cv2_to_imgmsg(frame, encoding="passthrough")
+    	pub.publish(image)
+    	rate.sleep()
+       cap.release()
 
 
 def callback(data):
@@ -35,7 +33,7 @@ def callback(data):
     cv2.imshow('frame', frame)
 	
     if cv2.waitKey(25) & 0xFF == ord('q'):
-	cv2.destroyAllWindows()
+    	cv2.destroyAllWindows()
 
 
 def listener():
