@@ -41,12 +41,6 @@ def callback(data):
 def listener():
     rospy.Subscriber("/image_raw", Image, callback)
     rospy.loginfo("Subscriber is starting")
-		
-    reader = Videos(num_frames=120, mode=select_frames)
-
-
-
-
 
 
 def main():
