@@ -22,9 +22,11 @@ def publisher():
         rate.sleep()
     cap.release()
 
+
 def main():
     rospy.init_node("camera_image", anonymous=True)
     publisher()
+
 
 if __name__=='__main__':
     main()
