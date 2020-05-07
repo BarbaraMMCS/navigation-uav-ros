@@ -18,11 +18,11 @@ def publisher():
     rospy.loginfo("Publisher is starting")
 
     while cap.isOpened():
-        _,frame=cap.read()
+        _,frame = cap.read()
         image = bridge.cv2_to_imgmsg(frame, encoding="passthrough")
         pub.publish(image)
         rate.sleep()
-        cap.release()
+    cap.release()
 
 
 def callback(data):
