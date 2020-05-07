@@ -18,22 +18,20 @@ def publisher():
     rospy.loginfo("Publisher is starting")
 
     while cap.isOpened():
-    	_,frame=cap.read()
-	    image = bridge.cv2_to_imgmsg(frame, encoding="passthrough")
-    	pub.publish(image)
-    	rate.sleep()
-       cap.release()
+        _,frame=cap.read()
+        image = bridge.cv2_to_imgmsg(frame, encoding="passthrough")
+        pub.publish(image)
+        rate.sleep()
+        cap.release()
 
 
 def callback(data):
 
     image = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
-    _,frame = cap.read()		
-
+    _,frame = cap.read()
     cv2.imshow('frame', frame)
-	
     if cv2.waitKey(25) & 0xFF == ord('q'):
-    	cv2.destroyAllWindows()
+        cv2.destroyAllWindows()
 
 
 def listener():
@@ -47,6 +45,6 @@ def main():
     publisher()
     rospy.spin()
 
+
 if __name__=='__main__':
-	main()
-	
+    main()
