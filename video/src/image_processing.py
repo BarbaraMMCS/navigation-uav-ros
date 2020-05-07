@@ -18,11 +18,15 @@ def callback(data):
 
 
 def listener():
-    rospy.init_node("image_processing", anonymous=True)
     rospy.Subscriber("/image_raw", Image, callback)
     rospy.loginfo("Subscriber is starting")
+
+
+def main():
+    rospy.init_node("image_processing", anonymous=True)
+    listener()
     rospy.spin()
 
 
 if __name__ == '__main__':
-    listener()
+    main()
