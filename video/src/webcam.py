@@ -8,7 +8,7 @@ from cv_bridge import CvBridge, CvBridgeError
 
 rospy.init_node("webcam", anonymous=True)
 bridge = CvBridge()
-topic = "/cv_camera_node/image_raw"
+topic = "/usb_cam/image_raw"
 
 
 def callback(msg):
