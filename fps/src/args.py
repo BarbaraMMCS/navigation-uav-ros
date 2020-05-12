@@ -9,3 +9,13 @@ parser.add_argument('--sum', dest='accumulate', action='store_const',
 
 args = parser.parse_args()
 print(args.accumulate(args.integers))
+
+
+import argparse
+
+parser = argparse.ArgumentParser(description='Choose frame rate')
+parser.add_argument('fps', type=int,
+                    help='fps is an integer')
+
+args = parser.parse_args()
+print(args.accumulate(args.integers))

@@ -9,20 +9,14 @@ from sensor_msgs.msg import Image
 import numpy as np
 import time
 
-
-video_path = 0
 bridge = CvBridge()
-cap = cv2.VideoCapture(video_path)
-
 
 def publisher():
 
     def nothing(x):
         pass
 
-
     pub = rospy.Publisher("/image_processed", Image, queue_size=10)
-    rate = rospy.Rate(10)
     rospy.loginfo("Publisher is starting")
 
     frame_rate = 30
@@ -34,17 +28,20 @@ def publisher():
     cv2.createTrackbar("FPS", "video", frame_rate, 60, nothing)
     cv2.createTrackbar("Gray", "video", 0, 1, nothing)
 
+    video_path = 0
+    cap = cv2.VideoCapture(video_path)
 
     while cap.isOpened():
 
         time_elapsed = time.time() - prev
         ret, frame = cap.read()
-        if time_elapsed > 1. / frame_rate:
+        if time_elapsed > 1 / frame_rate:
             prev = time.time()
             if ret:
                 total_frames += 1
                 fps = cv2.getTrackbarPos("FPS", "video")
-           
+                frame_rate = fps
+
                 # Switch Gray
                 switch_gray = cv2.getTrackbarPos("Gray", "video")
                 if switch_gray == 0:
@@ -52,15 +49,14 @@ def publisher():
                 else:
                     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
-
                 if cv2.waitKey(fps) & 0xFF == ord("q"):
                     break
             else:
                 break
-
+        rate = rospy.Rate(frame_rate)
         image = bridge.cv2_to_imgmsg(frame, encoding="passthrough")
         pub.publish(image)
-        rospy.loginfo("camera_node is Publishing frame to /image_processed")
+        rospy.loginfo("camera_node is Publishing")
         rate.sleep()
     cap.release()
 
@@ -89,13 +85,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-
-
-
-
-
-
-
-
-
