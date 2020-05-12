@@ -1,6 +1,6 @@
 # Project : Localization and detection of landmarks for supporting UAV navigation
 
-######Bachelor semester project 2 : part I
+#####Bachelor semester project 2 : part I
 
 ## Visualizing data with ROS
 
@@ -47,27 +47,27 @@ usb_cam : http://wiki.ros.org/usb_cam
 
 ### launch nodes :
 
-######Message pub/sub node
+#####Message pub/sub node
 ```
 roslaunch image node.launch
 ```
-######Image pub/sub node
+#####Image pub/sub node
 ```
 roslaunch image image.launch
 ```
-######Video pub node + sub node
+#####Video pub node + sub node
 ```
 roslaunch video video.launch
 ```
-######Sub to camera topic node
+#####Sub to camera topic node
 ```
 roslaunch video webcam.launch
 ```
-######Can change fps params in launch file
+#####Can change fps params in launch file
 ```
 roslaunch video fps_param.launch
 ```
-######Video pub/sub node with filter and fps slider 
+#####Video pub/sub node with filter and fps slider 
 ```
 roslaunch fps camera_node.launch
 ```
