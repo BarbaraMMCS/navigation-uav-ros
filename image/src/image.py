@@ -43,14 +43,12 @@ def callback(data):
     dim = (width, height)
     image = cv.resize(img, dim, interpolation=cv.INTER_AREA)
 
-    # Gray filter
-    # gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
 
     while True:
 
         # Show window
         cv.imshow("Image", image)
-        cv.waitKey(3)
+        cv.waitKey(5)
 
 
 if __name__ == '__main__':
