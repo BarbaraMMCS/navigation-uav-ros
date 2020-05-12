@@ -1,4 +1,4 @@
 # Project exclude paths
 /venv/
 .idea/
-/scripts_tests
+/scripts_tests/
