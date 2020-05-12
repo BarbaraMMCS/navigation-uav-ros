@@ -6,7 +6,7 @@
  <node name="image_processing_node" pkg="fps" type="image_processing_node.py" output="screen">
  </node>
 
- <node name="cv_camera_node" pkg="cv_camera" type="cv_camera_node" output="screen">
+ <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen">
  </node>
 
 
