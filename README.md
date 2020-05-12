@@ -1,6 +1,6 @@
 # Project : Localization and detection of landmarks for supporting UAV navigation
 
-Bachelor semester project 2: part1
+Bachelor semester project 2 : part I
 
 ## Visualizing data with ROS
 
@@ -43,6 +43,7 @@ vision_opencv : http://wiki.ros.org/vision_opencv
 
 cv_camera : http://wiki.ros.org/cv_camera
 
+usb_cam : http://wiki.ros.org/usb_cam
 
 ### launch nodes :
 
@@ -64,6 +65,7 @@ roslaunch video video.launch
 ```
 roslaunch video webcam.launch
 ```
+
  
 <img src="media/new_save.png">
 

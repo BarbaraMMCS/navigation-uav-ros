@@ -58,16 +58,16 @@ while (capture.isOpened()):
         bilateral = cv2.bilateralFilter(frame, 15, 75, 75)
 
         # Show windows
-        cv2.imshow("Color", frame)
+        #cv2.imshow("Color", frame)
         cv2.imshow("Gray", gray)
-        cv2.imshow("Red", red)
-        cv2.imshow("Blue", blue)
-        cv2.imshow("Green", green)
-        cv2.imshow("Not white", not_white)
-        cv2.imshow("Smoothed", smoothed)
-        cv2.imshow("Blur", blur)
+        #cv2.imshow("Red", red)
+        #cv2.imshow("Blue", blue)
+        #cv2.imshow("Green", green)
+        #cv2.imshow("Not white", not_white)
+        #cv2.imshow("Smoothed", smoothed)
+        #cv2.imshow("Blur", blur)
         cv2.imshow("Median", median)
-        cv2.imshow("Bilateral", bilateral)
+        #cv2.imshow("Bilateral", bilateral)
 
         if cv2.waitKey(1) & 0xFF == ord("q"):
             # quit key

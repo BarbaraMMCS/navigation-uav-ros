@@ -15,7 +15,7 @@ capture = cv2.VideoCapture("/home/barbara/Videos/Drone/DJI_0004.MOV")
 
 
 # Set FPS for files and drone feed
-frame_rate = 15
+frame_rate = 30
 # WEBCAM fps = frame_rate times 1000 -----> Because every loop = 1 ms. Use in WaitKey(fps)
 fps = frame_rate * 1000
 
@@ -26,7 +26,7 @@ prev = 0
 
 # Video codec and parameters for save (overwrite) --> XVID saves file.avi
 # To know original size uncomment : print(final_frame.shape) inside the while loop
-codec = cv2.VideoWriter_fourcc(*"XVID")
+codec = cv2.VideoWriter_fourcc(*'MJPG')
 recorder = cv2.VideoWriter("last_recorded.avi", codec, 15.0, (3840, 2160))
 
 # Create sliders
@@ -70,7 +70,7 @@ while capture.isOpened():
     ret, i_frame = capture.read()
 
     # Flip frame : 0 = up side down , 1 = mirror
-    # i_frame = cv2.flip(i_frame, 1)
+    i_frame = cv2.flip(i_frame, 1)
 
     # FPS
     if time_elapsed > 1. / frame_rate:
