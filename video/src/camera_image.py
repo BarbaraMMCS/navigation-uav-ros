@@ -7,7 +7,7 @@ from sensor_msgs.msg import Image
 
 
 bridge = CvBridge()
-cap = cv2.VideoCapture("/home/barbara/Videos/Drone/DJI_0004.MOV")
+cap = cv2.VideoCapture(0)
 
 
 def publisher():
