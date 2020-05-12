@@ -69,7 +69,6 @@ def listener():
 
 def callback(data):
     image = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
-    rospy.loginfo("callback is showing frame from /image_processed")
     cv2.imshow("video", image)
 
     if cv2.waitKey(5) & 0xFF == ord('q'):
