@@ -54,12 +54,6 @@ roslaunch image node.launch
 roslaunch image image.launch
 ```
 ```
-roslaunch image threshold.launch
-```
-```
-roslaunch image target.launch
-```
-```
 roslaunch video video.launch
 ```
 ```
@@ -68,9 +62,6 @@ roslaunch video webcam.launch
 ```
 roslaunch video fps_param.launch
 ```
-```
-roslaunch video cv_webcam.launch
-```
- 
+
 <img src="media/new_save.png">
 
