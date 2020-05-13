@@ -2,7 +2,7 @@
 
 <package format="2">
 
-  <name>fps</name>
+  <name>video</name>
   <version>0.0.1</version>
   <description>View image and video</description>
   <maintainer email="barbara.symeon.001@uni.lu">Barbara Symeon</maintainer>
@@ -10,7 +10,6 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>roslaunch</build_depend>
   <build_depend>cv_bridge</build_depend>
   <build_depend>rospy</build_depend>
   <build_depend>sensor_msgs</build_depend>
