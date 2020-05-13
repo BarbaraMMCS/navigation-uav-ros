@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 
-# rosrun fps camera_node.py
 # roslaunch fps camera_node.launch
 # to stop 'q' in window then 'Ctrl+c' in terminal
 
@@ -38,6 +37,7 @@ def publisher():
     cv2.namedWindow("video")
     cv2.createTrackbar("FPS", "video", frame_rate, 60, nothing)
     cv2.createTrackbar("Gray", "video", 1, 1, nothing)
+    cv2.createTrackbar("Threshold", "video", 0, 1, nothing)
 
     # While video run
     while cap.isOpened():
@@ -69,6 +69,13 @@ def publisher():
                     pass
                 else:
                     frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+                # Switch Threshold
+                switch_th = cv2.getTrackbarPos("Threshold", "video")
+                if switch_th == 0:
+                    pass
+                else:
+                    frame = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 85, 11)
 
                 # stops loop
                 if cv2.waitKey(fps) & 0xFF == ord("q"):  # one loop is 1ms for waitkey(1)
@@ -124,10 +131,5 @@ def main():
     rospy.spin()
 
 
-# start program
 if __name__ == '__main__':
-    try:
-        main()
-    except rospy.ROSInterruptException:
-        pass
-
+    main()
