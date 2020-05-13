@@ -3,7 +3,7 @@
 
 <launch>
 
-  <node name="image" pkg="UAV_navigation_ROS" type="image.py" output="screen">
+  <node name="image" pkg="ros_visualise" type="image.py" output="screen">
   </node>
 
 </launch>

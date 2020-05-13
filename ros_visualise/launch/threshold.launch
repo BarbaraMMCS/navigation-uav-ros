@@ -2,7 +2,7 @@
 
 <launch>
 
-  <node name="threshold" pkg="UAV_navigation_ROS" type="threshold.py" output="screen">
+  <node name="threshold" pkg="ros_visualise" type="threshold.py" output="screen">
   </node>
 
 </launch>

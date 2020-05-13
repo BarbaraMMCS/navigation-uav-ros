@@ -2,7 +2,7 @@
 
 <launch>
 
-  <node name="target" pkg="UAV_navigation_ROS" type="target.py" output="screen">
+  <node name="target" pkg="ros_visualise" type="target.py" output="screen">
   </node>
 
 </launch>
