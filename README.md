@@ -67,7 +67,7 @@ Fps parameter launch
 ```
 roslaunch UAV_navigation_ROS fps_param.launch
 ```
-Video node with filters and slider 
+Video node with filters and sliders
 ```
 roslaunch UAV_navigation_ROS camera_node.launch
 ```
