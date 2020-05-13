@@ -49,27 +49,27 @@ usb_cam : http://wiki.ros.org/usb_cam
 
 Message node
 ```
-roslaunch visualise_ros node.launch
+roslaunch ros_visualise node.launch
 ```
 Image node
 ```
-roslaunch visualise_ros image.launch
+roslaunch ros_visualise image.launch
 ```
 Video node A - B 
 ```
-roslaunch visualise_ros video.launch
+roslaunch ros_visualise video.launch
 ```
 Camera topic node
 ```
-roslaunch visualise_ros webcam.launch
+roslaunch ros_visualise webcam.launch
 ```
 Fps parameter launch
 ```
-roslaunch visualise_ros fps_param.launch
+roslaunch ros_visualise fps_param.launch
 ```
 Video node with filters and sliders
 ```
-roslaunch visualise_ros camera_node.launch
+roslaunch ros_visualise camera_node.launch
 ```
 <img src="media/new_save.png">
 
