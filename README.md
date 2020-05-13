@@ -12,7 +12,7 @@ Bachelor semester project 2 : part I
 
 ### Ros
 
-<img src="media/ROS_diagram_1.png" width="1080">
+<img src="media_files/ROS_diagram_1.png" width="1080">
           
 ### install workspace :
 
@@ -71,5 +71,5 @@ Video node with filters and sliders
 ```
 roslaunch ros_visualise camera_node.launch
 ```
-<img src="media/new_save.png">
+<img src="media_files/new_save.png">
 
