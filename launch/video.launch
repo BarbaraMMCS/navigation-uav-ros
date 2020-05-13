@@ -1,10 +1,10 @@
 <launch>
 
 
- <node name="image_processing" pkg="video" type="image_processing.py" output="screen">
+ <node name="image_processing" pkg="UAV_navigation_ROS" type="image_processing.py" output="screen">
  </node>
 
- <node name="camera_image" pkg="video" type="camera_image.py" output="screen">
+ <node name="camera_image" pkg="UAV_navigation_ROS" type="camera_image.py" output="screen">
  </node>
 
 </launch>

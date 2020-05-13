@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(video)
+project(UAV_navigation_ROS)
 
 find_package(catkin REQUIRED COMPONENTS
-  roslaunch
   cv_bridge
   rospy
   sensor_msgs

@@ -1,10 +1,9 @@
-<!-- Launcher: ros_opencv_pkg -->
 <!-- simple publisher subscriber -->
 
 
 <launch>
 
-  <node name="node" pkg="image" type="node.py" output="screen">
+  <node name="node" pkg="UAV_navigation_ROS" type="node.py" output="screen">
   </node>
 
 </launch>

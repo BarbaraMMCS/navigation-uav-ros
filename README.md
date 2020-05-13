@@ -47,29 +47,29 @@ usb_cam : http://wiki.ros.org/usb_cam
 
 ### launch nodes :
 
-Message pub/sub node
+Message node
 ```
-roslaunch image node.launch
+roslaunch UAV_navigation_ROS node.launch
 ```
-Image pub/sub node
+Image node
 ```
-roslaunch image image.launch
+roslaunch UAV_navigation_ROS image.launch
 ```
-Video pub node + sub node
+Video node A - B 
 ```
-roslaunch video video.launch
+roslaunch UAV_navigation_ROS video.launch
 ```
-Sub to camera topic node
+Camera topic node
 ```
-roslaunch video webcam.launch
+roslaunch UAV_navigation_ROS webcam.launch
 ```
-Can change fps params in launch file
+Fps parameter launch
 ```
-roslaunch video fps_param.launch
+roslaunch UAV_navigation_ROS fps_param.launch
 ```
-Video pub/sub node with filter and fps slider 
+Video node with filters and slider 
 ```
-roslaunch fps camera_node.launch
+roslaunch UAV_navigation_ROS camera_node.launch
 ```
 <img src="media/new_save.png">
 

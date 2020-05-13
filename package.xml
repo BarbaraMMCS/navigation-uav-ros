@@ -2,9 +2,9 @@
 
 <package format="2">
 
-  <name>video</name>
+  <name>UAV_navigation_ROS</name>
   <version>0.0.1</version>
-  <description>View image and video</description>
+  <description>Visualise image and video with ros</description>
   <maintainer email="barbara.symeon.001@uni.lu">Barbara Symeon</maintainer>
   <license>...</license>
 
