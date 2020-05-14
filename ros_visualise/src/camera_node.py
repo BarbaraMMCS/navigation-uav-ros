@@ -42,26 +42,25 @@ def publisher():
     # While video run
     while cap.isOpened():
 
-        # Time start - time of previous loop
+        # fps calculation
         time_elapsed = time.time() - prev
-
-        # Extract frame by frame
         ret, frame = cap.read()
 
         # Flip frame : 0 = up side down , 1 = mirror
         frame = cv2.flip(frame, 1)
 
-        # fps calculation
         if time_elapsed > 1 / frame_rate:
             prev = time.time()
-
-            # if frame
             if ret:
 
-                # update counter, get new fps, sets new fps value
                 total_frames += 1
+
+                # Fps slider
                 fps = cv2.getTrackbarPos("FPS", "video")
-                frame_rate = fps
+                if fps == 0:
+                    fps = 1
+                else:
+                    frame_rate = fps
 
                 # Switch Gray
                 switch_gray = cv2.getTrackbarPos("Gray", "video")
@@ -75,8 +74,11 @@ def publisher():
                 if switch_th == 0:
                     pass
                 else:
-                    frame = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 85, 11)
-
+                    if switch_gray == 0:
+                         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+                         frame = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 85, 11)
+                    else:
+                         frame = cv2.adaptiveThreshold(frame, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 85, 11)
                 # stops loop
                 if cv2.waitKey(fps) & 0xFF == ord("q"):  # one loop is 1ms for waitkey(1)
                     break
