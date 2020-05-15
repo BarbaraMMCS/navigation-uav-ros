@@ -1,8 +1,0 @@
-<!-- simple publisher subscriber -->
-
-<launch>
-
-  <node name="target" pkg="ros_visualise" type="target.py" output="screen">
-  </node>
-
-</launch>

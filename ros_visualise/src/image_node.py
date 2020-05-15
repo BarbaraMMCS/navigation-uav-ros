@@ -1,13 +1,9 @@
 #!/usr/bin/env python
 
-"""
-description
-usage example
-parameters
-"""
+# publisher subscriber node for showing images
 
-import numpy as np
-import cv2 as cv
+# import numpy as np
+import cv2
 
 import rospy
 from sensor_msgs.msg import Image
@@ -36,27 +32,19 @@ def callback(data):
     except CvBridgeError as error:
         print(error)
 
-
-    # image resize
-    width = 1920 / 2
-    height = 1080 / 2
-    dim = (width, height)
-    image = cv.resize(img, dim, interpolation=cv.INTER_AREA)
-
+    dim = (1920, 1080)
+    image = cv2.resize(img, dim, interpolation=cv2.INTER_AREA)
 
     while True:
-
-        # Show window
-        cv.imshow("Image", image)
-        cv.waitKey(5)
+        cv2.imshow("Image", image)
+        cv2.waitKey(3)
 
 
 if __name__ == '__main__':
     br = CvBridge()
-    # cv.imread("...", 0) for greyscale
-    data = cv.imread("/home/barbara/Pictures/pyramid_rock.jpg", 0)
-    if (data.any()):
-        rospy.init_node("image", anonymous=True)
+    data = cv2.imread("/home/barbara/Pictures/image.jpg", 0)
+    if data.any():
+        rospy.init_node("image_node", anonymous=True)
         subscriber()
         publisher()
     else:
@@ -65,7 +53,4 @@ if __name__ == '__main__':
         rospy.spin()
     except KeyboardInterrupt:
         print("Shutting down")
-
-    cv.destroyAllWindows()
-
-
+    cv2.destroyAllWindows()

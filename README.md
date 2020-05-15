@@ -14,17 +14,7 @@ Bachelor semester project 2 : part I
 
 <img src="media_files/ROS_diagram_1.png" width="1080">
           
-### install workspace :
-
-```
-mkdir -p ~/catkin_ws/src
-
-cd ~/catkin_ws/
-
-catkin_make -DPYTHON_EXECUTABLE=/usr/bin/python3
-
-source devel/setup.bash
-```
+### install workspace
 
 ### install this repository :
 ```
@@ -37,37 +27,31 @@ cd ~/catkin_ws/
 catkin_make
 
 ```
-### install Package : 
+### Packages : 
 
 vision_opencv : http://wiki.ros.org/vision_opencv
 
 usb_cam : http://wiki.ros.org/usb_cam
 
-### launch nodes :
+### Launch :
 
-Message node
 ```
-roslaunch ros_visualise node.launch
+roslaunch ros_visualise msg_node.launch
 ```
-Image node
 ```
-roslaunch ros_visualise image.launch
+roslaunch ros_visualise image_node.launch
 ```
-Video node A - B 
 ```
-roslaunch ros_visualise video.launch
+roslaunch ros_visualise video_ab.launch
 ```
-Camera topic node
 ```
 roslaunch ros_visualise webcam.launch
 ```
-Fps parameter launch
 ```
-roslaunch ros_visualise fps_param.launch
+roslaunch ros_visualise parameters.launch
 ```
-Video node with filters and sliders
 ```
-roslaunch ros_visualise camera_node.launch
+roslaunch ros_visualise video_node.launch
 ```
 <img src="media_files/new_save.png">
 

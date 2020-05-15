@@ -1,12 +1,14 @@
 #!/usr/bin/env python
 
+# subscribes to image topic video node
+
 import rospy
 from sensor_msgs.msg import Image
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
 
 
-rospy.init_node("webcam", anonymous=True)
+rospy.init_node("webcam_node", anonymous=True)
 bridge = CvBridge()
 topic = "/usb_cam/image_raw"
 

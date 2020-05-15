@@ -1,9 +1,0 @@
-<!-- Launcher: ros_opencv_pkg -->
-<!-- simple publisher subscriber -->
-
-<launch>
-
-  <node name="image" pkg="ros_visualise" type="image.py" output="screen">
-  </node>
-
-</launch>

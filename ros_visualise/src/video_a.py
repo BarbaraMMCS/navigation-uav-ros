@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# video publisher node a
+
 import cv2
 import rospy
 from cv_bridge import CvBridge,CvBridgeError
@@ -24,7 +26,7 @@ def publisher():
 
 
 def main():
-    rospy.init_node("camera_image", anonymous=True)
+    rospy.init_node("video_a", anonymous=True)
     publisher()
 
 

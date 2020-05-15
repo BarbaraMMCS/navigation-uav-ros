@@ -1,8 +1,0 @@
-<!-- simple publisher subscriber -->
-
-<launch>
-
-  <node name="threshold" pkg="ros_visualise" type="threshold.py" output="screen">
-  </node>
-
-</launch>

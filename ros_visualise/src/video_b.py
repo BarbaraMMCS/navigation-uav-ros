@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+# video subscriber node b
+
 import rospy
 import cv2
 from cv_bridge import CvBridge
@@ -10,9 +12,7 @@ bridge = CvBridge()
 
 def callback(data):
     image = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
-
     cv2.imshow("video", image)
-
     if cv2.waitKey(25) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
 
@@ -23,7 +23,7 @@ def listener():
 
 
 def main():
-    rospy.init_node("image_processing", anonymous=True)
+    rospy.init_node("video_b", anonymous=True)
     listener()
     rospy.spin()
 

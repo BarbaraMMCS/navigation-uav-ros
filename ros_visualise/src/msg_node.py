@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# simple publisher subcriber
+# publisher subcriber for showing string type messsages.
 
 import rospy
 from std_msgs.msg import String
@@ -8,7 +8,7 @@ from std_msgs.msg import String
 
 def publisher():
     pub = rospy.Publisher('message', String, queue_size=10)
-    rate = rospy.Rate(10)  #10HZ
+    rate = rospy.Rate(1)
 
     while not rospy.is_shutdown():
         str = "Time: %s" % rospy.get_time()
@@ -25,10 +25,9 @@ def subscriber():
     sub = rospy.Subscriber('message', String, callback)
 
 
-
 if __name__ == '__main__':
     try:
-        rospy.init_node("node", anonymous= True)
+        rospy.init_node("msg_node", anonymous= True)
         subscriber()
         publisher()
         rospy.spin()
