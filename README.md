@@ -12,7 +12,7 @@ Bachelor semester project 2 : part I
 
 ### Ros
 
-<img src="media_files/ROS_diagram_1.png" width="1080">
+<img src="files/file.png" width="1080">
           
 ### install workspace
 
@@ -53,5 +53,5 @@ roslaunch ros_visualise parameters.launch
 ```
 roslaunch ros_visualise video_node.launch
 ```
-<img src="media_files/new_save.png">
+<img src="files/image.png">
 
