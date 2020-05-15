@@ -45,13 +45,13 @@ roslaunch ros_visualise image_node.launch
 roslaunch ros_visualise video_ab.launch
 ```
 ```
+roslaunch ros_visualise video_node.launch
+```
+```
 roslaunch ros_visualise webcam.launch
 ```
 ```
 roslaunch ros_visualise parameters.launch
-```
-```
-roslaunch ros_visualise video_node.launch
 ```
 <img src="files/image.png">
 
