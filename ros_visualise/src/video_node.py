@@ -30,7 +30,7 @@ def publisher():
     total_frames = 0
     prev = 0
 
-    cv2.namedWindow("video_node")
+    cv2.namedWindow("video")
     cv2.createTrackbar("FPS", "video", frame_rate, frame_rate, nothing)
     cv2.createTrackbar("Gray", "video", 1, 1, nothing)
 
@@ -79,15 +79,16 @@ def subscriber():
     rospy.loginfo("camera_node is subscribing to /image_processed")
 
 
-def callback(data):
+def callback(img):
     try:
-        image = bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
+        img = bridge.imgmsg_to_cv2(img, desired_encoding="passthrough")
     except CvBridgeError as error:
         print(error)
 
+
     rospy.loginfo("Showing frame from /image_processed")
 
-    cv2.imshow("video", image)
+    cv2.imshow("video", img)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
@@ -102,4 +103,7 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    try:
+        main()
+    except rospy.ROSInterruptException:
+        pass
