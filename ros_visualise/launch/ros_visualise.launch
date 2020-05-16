@@ -1,6 +1,6 @@
 <launch>
 
-  <node name="process_cv2_node" pkg="ros_visualise" type="process_cv2_node.py" output="screen" >
+  <node name="process_cv2" pkg="ros_visualise" type="process_cv2.py" output="screen" >
      <remap from="topic_name" to="/usb_cam/image_raw" />
   </node>
 

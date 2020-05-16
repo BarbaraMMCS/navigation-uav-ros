@@ -48,7 +48,7 @@ roslaunch ros_visualise video_ab.launch
 roslaunch ros_visualise video_node.launch
 ```
 ```
-roslaunch ros_visualise webcam_node.launch
+roslaunch ros_visualise ros_visualise.launch
 ```
 ```
 roslaunch ros_visualise parameters.launch
