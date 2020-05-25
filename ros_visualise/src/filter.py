@@ -36,7 +36,7 @@ class Filter:
         except CvBridgeError as e:
             print(e)
 
-        frame = self.filter(frame)
+        self.filter(frame)
 
 
 cf = None
