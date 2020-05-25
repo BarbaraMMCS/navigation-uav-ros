@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# video subscriber node b
+# video subscriber node c
 
 import rospy
 import cv2
