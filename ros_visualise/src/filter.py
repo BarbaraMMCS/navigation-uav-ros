@@ -10,7 +10,7 @@ from sensor_msgs.msg import Image
 
 class Filter:
 
-    def __init__(self, src=0):
+    def __init__(self):
         self.bridge = CvBridge()
 
     def nothing(self, x):
