@@ -1,0 +1,6 @@
+<launch>
+  <include file="$(find usb_cam)/launch/usb_cam.launch"/>
+  <include file="$(find ros_visualise)/launch/process_cv2.launch"/>
+  <include file="$(find ros_visualise)/launch/on_screen.launch"/>
+
+</launch>

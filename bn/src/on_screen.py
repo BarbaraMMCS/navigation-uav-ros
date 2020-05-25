@@ -1,5 +1,3 @@
-#!/usr/bin/env python
-
 # video subscriber node b
 
 import rospy
@@ -21,12 +19,12 @@ def callback(data):
 
 
 def listener():
-    rospy.Subscriber('topic_name', Image, callback)
+    rospy.Subscriber('/topic_name', Image, callback)
     rospy.loginfo("Subscriber is starting")
 
 
 def main():
-    rospy.init_node("view_on_screen", anonymous=True)
+    rospy.init_node("on_screen", anonymous=True)
     listener()
     while not rospy.is_shutdown():
         rospy.spin()
