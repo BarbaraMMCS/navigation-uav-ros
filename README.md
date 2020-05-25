@@ -53,5 +53,8 @@ roslaunch ros_visualise ros_visualise.launch
 ```
 roslaunch ros_visualise parameters.launch
 ```
+```
+rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
+```
 <img src="files/image.png">
 
