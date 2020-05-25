@@ -36,22 +36,10 @@ usb_cam : http://wiki.ros.org/usb_cam
 ### Launch :
 
 ```
-roslaunch ros_visualise msg_node.launch
+roslaunch ros_visualise switch.launch
 ```
 ```
-roslaunch ros_visualise image_node.launch
-```
-```
-roslaunch ros_visualise video_ab.launch
-```
-```
-roslaunch ros_visualise video_node.launch
-```
-```
-roslaunch ros_visualise ros_visualise.launch
-```
-```
-roslaunch ros_visualise parameters.launch
+roslaunch ros_visualise filter.launch
 ```
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
