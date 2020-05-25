@@ -39,10 +39,6 @@ class Filter:
         self.filter(frame)
 
 
-cf = None
-run = Filter()
-
-
 def callback(data):
     run.callback(data)
 
@@ -62,6 +58,7 @@ def main():
 
 
 if __name__ == '__main__':
+    run = Filter()
     try:
         main()
     except rospy.ROSInterruptException:
