@@ -1,0 +1,10 @@
+<launch>
+  <include file="$(find usb_cam)/launch/usb_cam.launch"/>
+
+  <node name="switch" pkg="ros_visualise" type="switch.py" output="screen" >
+  </node>
+
+  <node name="img_publisher" pkg="ros_visualise" type="img_publisher.py" output="screen" >
+  </node>
+
+</launch>
