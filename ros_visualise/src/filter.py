@@ -6,6 +6,7 @@ import rospy
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
+import numpy as np
 
 
 
@@ -19,6 +20,23 @@ class Filter:
         pass
 
 
+    def filter(self, frame):
+        cv2.namedWindow("video")
+        cv2.createTrackbar("value", "video", 128, 255, self.nothing)
+        while True:
+
+            value_th = cv2.getTrackbarPos("value", "video")
+
+            _, th_trunc = cv2.threshold(frame, value_th, 255, cv2.THRESH_TRUNC)
+
+            cv2.imshow("th_trunc", th_trunc)
+
+            cv2.imshow("video", frame)
+
+
+            if cv2.waitKey(15) & 0xFF == ord('q'):
+                cv2.destroyAllWindows()
+
 
     def callback(self, data):
         try:
@@ -26,28 +44,10 @@ class Filter:
         except CvBridgeError as e:
             print(e)
 
-        cv2.namedWindow("video")
+        frame = self.filter(frame)
 
-        cv2.createTrackbar("Bilateral", "video", 0, 1, self.nothing)
-        while (True):
-        
 
-            # Switch bilateral blur
-            switch = cv2.getTrackbarPos("Bilateral", "video")
-            if switch == 0:
-                pass
-            else:
-                frame = cv2.bilateralFilter(frame, 15, 75, 75)
 
-            cv2.imshow("video", frame)
-
-            if cv2.waitKey(15) & 0xFF == ord('q'):
-                cv2.destroyAllWindows()
-
-            cv2.imshow("video", frame)
-
-            if cv2.waitKey(15) & 0xFF == ord('q'):
-                cv2.destroyAllWindows()
         
 
 cf = None
@@ -66,7 +66,7 @@ def listener():
 
 
 def main():
-    rospy.init_node("fps", anonymous=True)
+    rospy.init_node("filter", anonymous=True)
 
     while not rospy.is_shutdown():
         data = rospy.wait_for_message('/gray', Image)

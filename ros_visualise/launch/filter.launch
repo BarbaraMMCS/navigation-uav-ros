@@ -3,7 +3,7 @@
   <include file="$(find usb_cam)/launch/usb_cam.launch"/>
   <include file="$(find ros_visualise)/launch/process_cv2.launch"/>
 
-  <node name="fps" pkg="ros_visualise" type="fps.py" output="screen" >
+  <node name="filter" pkg="ros_visualise" type="filter.py" output="screen" >
   </node>
 
 </launch>
