@@ -1,0 +1,7 @@
+<launch>
+  <node name="fps" pkg="ros_visualise" type="fps.py" output="screen" >
+    <param name="topic_sub" value="/processed_image" />
+    <param name="topic_pub" value="/end" />
+    <param name="fps" value="30" />
+  </node>
+</launch>

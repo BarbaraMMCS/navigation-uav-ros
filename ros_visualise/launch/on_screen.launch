@@ -1,7 +1,0 @@
-<launch>
-
-
-  <node name="process_cv2" pkg="ros_visualise" type="process_cv2.py" output="screen" >
-  </node>
-
-</launch>

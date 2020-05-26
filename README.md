@@ -34,12 +34,8 @@ vision_opencv : http://wiki.ros.org/vision_opencv
 usb_cam : http://wiki.ros.org/usb_cam
 
 ### Launch :
-
 ```
-roslaunch ros_visualise switch.launch
-```
-```
-roslaunch ros_visualise filter.launch
+roslaunch ros_visualise main.launch
 ```
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz

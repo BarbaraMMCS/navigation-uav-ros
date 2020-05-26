@@ -1,7 +1,0 @@
-<launch>
-
- <node name="video_node" pkg="ros_visualise" type="video_node.py" output="screen">
- </node>
-
-
-</launch>

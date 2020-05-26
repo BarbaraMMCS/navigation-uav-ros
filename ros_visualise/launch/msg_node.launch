@@ -1,9 +1,0 @@
-<!-- simple publisher subscriber -->
-
-
-<launch>
-
-  <node name="msg_node" pkg="ros_visualise" type="msg_node.py" output="screen">
-  </node>
-
-</launch>

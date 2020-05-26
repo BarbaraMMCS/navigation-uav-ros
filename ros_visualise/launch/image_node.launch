@@ -1,6 +1,0 @@
-<launch>
-
-  <node name="image_node" pkg="ros_visualise" type="image_node.py" output="screen">
-  </node>
-
-</launch>
