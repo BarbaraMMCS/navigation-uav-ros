@@ -11,7 +11,8 @@ bridge = CvBridge()
 
 
 def subscriber():
-    rospy.Subscriber('/usb_cam/image_raw', Image, callback)
+    topic_sub = rospy.get_param('~topic_sub')
+    rospy.Subscriber(topic_sub, Image, callback)
 
 
 def callback(img):
@@ -30,7 +31,8 @@ def callback(img):
     except CvBridgeError as error:
         print(error)
     # publish
-    pub = rospy.Publisher('/gray', Image, queue_size=10)
+    topic_pub = rospy.get_param('~topic_pub')
+    pub = rospy.Publisher(topic_pub, Image, queue_size=10)
     rospy.loginfo_once("Publisher is starting")
     pub.publish(img_msg)
 

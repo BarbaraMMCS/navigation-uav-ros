@@ -1,9 +1,5 @@
-
 <launch>
-  <include file="$(find usb_cam)/launch/usb_cam.launch"/>
-  <include file="$(find ros_visualise)/launch/process_cv2.launch"/>
-
   <node name="filter" pkg="ros_visualise" type="filter.py" output="screen" >
+   <param name="topic_sub" value="/gray" />
   </node>
-
 </launch>

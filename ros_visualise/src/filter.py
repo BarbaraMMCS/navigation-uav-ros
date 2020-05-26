@@ -43,7 +43,8 @@ def callback(data):
 
 
 def listener():
-    rospy.Subscriber('/gray', Image, callback)
+    topic = rospy.get_param('~topic_sub')
+    rospy.Subscriber(topic, Image, callback)
     rospy.loginfo("Subscriber is starting")
 
 
