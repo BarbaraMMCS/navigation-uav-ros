@@ -2,5 +2,4 @@
   <include file="$(find usb_cam)/launch/usb_cam.launch"/>
   <include file="$(find ros_visualise)/launch/fps.launch"/>
   <include file="$(find ros_visualise)/launch/filters.launch"/>
-
 </launch>

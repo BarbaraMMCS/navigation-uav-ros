@@ -19,37 +19,30 @@ class Filter:
     def nothing(self, x):
         pass
 
-    def filter(self, frame):
+    def filter(self, data):
         value_th = cv2.getTrackbarPos("Threshold", "filters")
-        _, frame = cv2.threshold(frame, value_th, 255, cv2.THRESH_TRUNC)
-
-        # Switch Gray
+        _, data = cv2.threshold(data, value_th, 255, cv2.THRESH_TRUNC)
         switch_gray = cv2.getTrackbarPos("Gray", "filters")
         if switch_gray == 0:
             pass
         else:
-            frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-        cv2.imshow("filters", frame)
-
+            data = cv2.cvtColor(data, cv2.COLOR_BGR2GRAY)
+        cv2.imshow("filters", data)
         if cv2.waitKey(15) & 0xFF == ord('q'):
             cv2.destroyAllWindows()
-        return frame
+        return data
 
     def callback(self, data):
         try:
             data = self.bridge.imgmsg_to_cv2(data, desired_encoding="passthrough")
         except CvBridgeError as e:
             print(e)
-
         if data.any():
             data = self.filter(data)
-
             try:
                 data = self.bridge.cv2_to_imgmsg(data, encoding="passthrough")
             except CvBridgeError as error:
                 print(error)
-
             topic_pub = rospy.get_param('~topic_pub')
             pub = rospy.Publisher(topic_pub, Image, queue_size=10)
             rospy.loginfo_once("Publisher is sending data")
@@ -69,7 +62,7 @@ def subscriber():
 
 
 def main():
-    rospy.init_node("filter", anonymous=True)
+    rospy.init_node("filters", anonymous=True)
     while not rospy.is_shutdown():
         subscriber()
         rospy.spin()
@@ -81,4 +74,3 @@ if __name__ == '__main__':
         main()
     except rospy.ROSInterruptException:
         pass
-
