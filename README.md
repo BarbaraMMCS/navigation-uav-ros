@@ -14,9 +14,9 @@ Bachelor semester project 2 : part I
 
 <img src="files/file.png" width="1080">
           
-### install workspace
+### Install workspace
 
-### install this repository :
+### Install this repository :
 ```
 cd ~/catkin_ws/src
 
@@ -27,21 +27,29 @@ cd ~/catkin_ws/
 catkin_make
 
 ```
-### Packages : 
+### Packages: 
 
 vision_opencv : http://wiki.ros.org/vision_opencv
 
 usb_cam : http://wiki.ros.org/usb_cam
 
-### Launch :
+### Launch:
 ```
 roslaunch ros_visualise main.launch
 ```
 ```
 roslaunch ros_edge_detector main.launch
 ```
-### Rqt : 
+### Rqt: 
+#### ros_visualise:
 <img src="files/rqt.png">
+
+#### ros_edge_detector:
+<img src="files/edge.png">
+<img src="files/detected.png">
+<img src="files/both.png">
+<img src="files/all.png">
+
 
 ### Rviz :
 ```

@@ -2,7 +2,7 @@
 
 <package format="2">
 
-  <name>ros_fps</name>
+  <name>ros_edge_detector</name>
   <version>0.0.1</version>
   <description>Visualise image and video with ros</description>
   <maintainer email="barbara.symeon.001@uni.lu">Barbara Symeon</maintainer>

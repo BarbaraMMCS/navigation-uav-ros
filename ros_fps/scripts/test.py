@@ -31,13 +31,13 @@ class node:
         self.stop = rospy.Time.now()
         
     def update(self):
-        self.numFrames = int(cv2.getTrackbarPos("fps", "fps"))
+        self.num_frames = int(cv2.getTrackbarPos("fps", "fps"))
         
     def elapsed(self):
         return (self.stop - self.start)
     
     def fps(self):
-        return self.numFrames / self.elapsed()
+        return self.num_frames / self.elapsed()
 
     def to_cv2(self, data):
         try:
