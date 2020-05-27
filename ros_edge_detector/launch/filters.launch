@@ -1,0 +1,6 @@
+<launch>
+  <node name="filters" pkg="ros_visualise" type="filters.py" output="screen" >
+    <param name="topic_sub" value="/controled_stream" />
+    <param name="topic_pub" value="/processed_image" />
+  </node>
+</launch>

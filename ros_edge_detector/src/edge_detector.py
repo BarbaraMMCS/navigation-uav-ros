@@ -37,7 +37,7 @@ class Edge:
         self.max_val = new_val
 
     def edge(self, data):
-        data = cv2.cvtColor(data, cv2.COLOR_BGR2GRAY)
+
         self.gray = data
         self.redraw_edges()
         #cv2.imshow("gray", data)

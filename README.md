@@ -54,6 +54,8 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 <img src="files/detected.png">
 <img src="files/both.png">
 <img src="files/all.png">
+<img src="files/connected.png">
+
 
 
 
