@@ -37,7 +37,7 @@ usb_cam : http://wiki.ros.org/usb_cam
 ```
 roslaunch ros_visualise main.launch
 ```
-### Rqt graph : 
+### Rqt : 
 <img src="files/rqt.png">
 
 ### Rviz :
