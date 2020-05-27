@@ -37,6 +37,8 @@ usb_cam : http://wiki.ros.org/usb_cam
 ```
 roslaunch ros_visualise main.launch
 ```
+<img src="files/rqt.png">
+
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 ```

@@ -25,8 +25,10 @@ class Fps:
     def show(self, data):
         variable_fps = cv2.getTrackbarPos("fps", "fps")
         cv2.imshow("fps", data)
+
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cv2.destroyAllWindows()
+
         return variable_fps
 
     def callback(self, data):
@@ -43,12 +45,8 @@ class Fps:
                 data = self.bridge.cv2_to_imgmsg(data, encoding="passthrough")
             except CvBridgeError as error:
                 print(error)
-            
+
             rate = rospy.Rate(self.fps)
-            topic_pub = rospy.get_param('~topic_pub')
-            pub = rospy.Publisher(topic_pub, Image, queue_size=10)
-            rospy.loginfo_once("Publisher is sending data")
-            pub.publish(data)
             rate.sleep()
         else:
             pass
