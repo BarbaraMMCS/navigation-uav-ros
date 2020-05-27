@@ -9,8 +9,9 @@
     <param name="framerate" value="30"/>
   </node>
 
-  <node name="test" pkg="ros_edge_detector" type="test.py" output="screen" >
+  <node name="rospy_fps" pkg="ros_fps" type="rospy_fps.py" output="screen" >
     <param name="topic_pub" value="/controled_stream" />
     <param name="topic_sub" value="/usb_cam/image_raw" />
+    <param name="fps" value="3" />
   </node>
 </launch>

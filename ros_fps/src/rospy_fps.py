@@ -11,14 +11,15 @@ from sensor_msgs.msg import Image
 
 class node:
     
-    def __init__(self):
+    def __init__(self, fps):
         self.start = rospy.Time.now()
         self.stop = rospy.Time.now()
-        self.num_frames = 30
+        self.fps = fps
+        self.num_frames = 0
         self.bridge = CvBridge()
 
         cv2.namedWindow("fps")
-        cv2.createTrackbar("fps", "fps", 10, 30, self.nothing)
+        cv2.createTrackbar("fps", "fps", self.fps, 30, self.nothing)
 
     def nothing(self, x):
         pass
@@ -31,13 +32,13 @@ class node:
         self.stop = rospy.Time.now()
         
     def update(self):
-        self.num_frames = int(cv2.getTrackbarPos("fps", "fps"))
-        
+        self.fps = int(cv2.getTrackbarPos("fps", "fps"))
+
     def elapsed(self):
         return (self.stop - self.start)
     
     def fps(self):
-        return self.num_frames / self.elapsed()
+        return self.num_frames / self.elapsed().secs
 
     def to_cv2(self, data):
         try:
@@ -60,33 +61,38 @@ class node:
 
     def publisher(self, data, fps):
         data = self.to_rosmsg(data)
-        rate = rospy.Rate(fps)
+        rate = rospy.Rate(self.fps)
         topic_pub = rospy.get_param('~topic_pub')
         pub = rospy.Publisher(topic_pub, Image, queue_size=10)
         pub.publish(data)
+        rospy.loginfo("fps: {0}".format(self.fps))
+        rospy.loginfo("time elapsed: {0}".format(self.elapsed()))
         rate.sleep()
 
 
     def callback(self, data):    
-        duration = self.time_elapsed()
-        frames = self.num_frames
-        if duration > 1/ frames:
-            self.timer_start
+        print('start', self.start.secs)
+        print('stop', self.stop.secs)
+        print('num_frames', self.num_frames)
+        print('elapsed', self.elapsed())
+        print('fps', self.fps)
+
         data = self.to_cv2(data)     
         if data.any():
-            self.update()
+            self.timer_start()
             self.show(data)
-            fps = self.fps()
+            self.update()
+            fps = self.fps
             self.publisher(data, fps)
         else:
             pass
 
 
-def callback(data):
-    node.callback(data)
-    print("[INFO] elasped time: {:.2f}".format(node.elapsed()))
-    print("[INFO] approx. FPS: {:.2f}".format(node.fps()))
 
+def callback(data):
+    node.num_frames += 1
+    node.callback(data)
+    node.timer_stop()
 
 def subscriber():
     topic_sub = rospy.get_param('~topic_sub')
@@ -94,7 +100,7 @@ def subscriber():
 
 
 def main():
-
+    fps = rospy.get_param('~fps')
     while not rospy.is_shutdown():
         subscriber()
         rospy.spin()
@@ -102,7 +108,8 @@ def main():
 
 if __name__ == '__main__':
     rospy.init_node("test", anonymous=True)
-    node = node()
+    fps = rospy.get_param('~fps')
+    node = node(fps)
     try:
         main()
     except rospy.ROSInterruptException:
