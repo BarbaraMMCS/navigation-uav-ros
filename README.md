@@ -37,6 +37,9 @@ usb_cam : http://wiki.ros.org/usb_cam
 ```
 roslaunch ros_visualise main.launch
 ```
+```
+roslaunch ros_edge_detector main.launch
+```
 ### Rqt : 
 <img src="files/rqt.png">
 

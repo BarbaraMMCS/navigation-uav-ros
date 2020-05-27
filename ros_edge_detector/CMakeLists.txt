@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(ros_visualise)
+project(ros_edge_detector)
 
 find_package(catkin REQUIRED COMPONENTS
   cv_bridge
@@ -10,4 +10,6 @@ find_package(catkin REQUIRED COMPONENTS
 
 find_package(OpenCV REQUIRED)
 
+
 include_directories(${catkin_INCLUDE_DIRS})
+

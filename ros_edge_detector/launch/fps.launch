@@ -1,0 +1,7 @@
+<launch>
+  <node name="fps" pkg="ros_edge_detector" type="fps.py" output="screen" >
+    <param name="topic_sub" value="/usb_cam/image_raw" />
+    <param name="topic_pub" value="/controled_stream" />
+    <param name="fps" value="30" />
+  </node>
+</launch>
