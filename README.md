@@ -10,13 +10,13 @@ Bachelor semester project 2 : part I
 
 3. Implement nodes from prerecorded rosbag containing images, localization and other sensor data and display nodes in a more advanced way.
 
-### Ros
+## Ros
 
 <img src="files/file.png" width="1080">
           
-### install workspace
+## install workspace
 
-### install this repository :
+###install this repository :
 ```
 cd ~/catkin_ws/src
 
@@ -37,8 +37,10 @@ usb_cam : http://wiki.ros.org/usb_cam
 ```
 roslaunch ros_visualise main.launch
 ```
+### Rqt graph : 
 <img src="files/rqt.png">
 
+### Rviz :
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 ```
