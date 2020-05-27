@@ -40,6 +40,9 @@ roslaunch ros_visualise main.launch
 ```
 roslaunch ros_edge_detector main.launch
 ```
+```
+roslaunch ros_fps main.launch
+```
 ### ros_visualise:
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
