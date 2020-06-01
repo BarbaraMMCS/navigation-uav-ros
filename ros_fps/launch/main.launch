@@ -1,4 +1,4 @@
 <launch>
-  <include file="$(find ros_fps)/launch/fps.launch"/>
+  <include file="$(find ros_fps)/launch/time.launch"/>
   <include file="$(find ros_fps)/launch/filters.launch"/>
 </launch>
