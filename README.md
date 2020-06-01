@@ -57,10 +57,16 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 <img src="files/connected.png">
 
 ## Kitty data set: 
-
+```
 http://www.cvlibs.net/datasets/kitti/index.php
-<img src="files/kitti_node.png">
+```
 <img src="files/kitti_rviz.png">
+
+```
+rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
+```
+
+<img src="files/kitti_node.png">
 
 
 
