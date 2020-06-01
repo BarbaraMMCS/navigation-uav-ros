@@ -41,9 +41,6 @@ roslaunch ros_visualise main.launch
 roslaunch ros_edge_detector main.launch
 ```
 ```
-roslaunch ros_fps main.launch
-```
-```
 roslaunch ros_fps time.launch
 ```
 ### ros_visualise:
@@ -59,6 +56,11 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 <img src="files/all.png">
 <img src="files/connected.png">
 
+## Kitty data set: 
+
+http://www.cvlibs.net/datasets/kitti/index.php
+<img src="files/kitti_node.png">
+<img src="files/kitti_rviz.png">
 
 
 
