@@ -10,7 +10,7 @@ Bachelor semester project 2 : part I
 
 3. Implement nodes from prerecorded rosbag containing images, localization and other sensor data and display nodes in a more advanced way.
 
-## Ros
+## Ros:
 
 <img src="files/file.png" width="1080">     
     
@@ -27,7 +27,9 @@ catkin_make
 ### Packages: 
 
 vision_opencv : http://wiki.ros.org/vision_opencv
+
 usb_cam : http://wiki.ros.org/usb_cam
+
 kitti_to_rosbag : https://github.com/ethz-asl/kitti_to_rosbag
 
 ## Launch package:
