@@ -65,7 +65,7 @@ roslaunch ros_visualise time_rosbag.launch
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
 ```
+<img src="files/kitti_rviz.png">
 
 <img src="files/on_rosbag.png">
 
-<img src="files/kitti_rviz.png">
