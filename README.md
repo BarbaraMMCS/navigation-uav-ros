@@ -44,6 +44,9 @@ roslaunch ros_edge_detector main.launch
 roslaunch ros_fps time.launch
 ```
 ### ros_visualise:
+
+<img src="files/from_file.png">
+
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 ```
@@ -67,6 +70,11 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
 ```
 
 <img src="files/kitti_node.png">
+
+
+<img src="files/on_rosbag.png">
+
+
 
 
 
