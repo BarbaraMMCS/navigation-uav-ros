@@ -1,15 +1,15 @@
 #!/usr/bin/env python
 
-# ros node
+# video publisher node a
 
 import cv2
 import rospy
 from cv_bridge import CvBridge,CvBridgeError
 from sensor_msgs.msg import Image
 import imutils
+
 from imutils.video import WebcamVideoStream
 from imutils.video import FPS
-
 
 class Video:
 
@@ -47,11 +47,15 @@ class Video:
     def stream(self):
         while self.fps._numFrames < self.num_frames:
             frame = self.vs.read()
-        if self.display > 0:
-            self.show(frame)
-        self.publisher(frame)
-        self.fps.update()
+
+	    if self.display > 0:
+                self.show(frame)
+
+            self.publisher(frame)
+	    self.fps.update()
+
         self.fps.stop()
+
         cv2.destroyAllWindows()
         self.vs.stop()
 
@@ -68,3 +72,4 @@ if __name__ == '__main__':
         main()
     except rospy.ROSInterruptException:
         pass
+
