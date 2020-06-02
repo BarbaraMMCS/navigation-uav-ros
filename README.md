@@ -34,42 +34,38 @@ usb_cam : http://wiki.ros.org/usb_cam
 
 kitti_to_rosbag : https://github.com/ethz-asl/kitti_to_rosbag
 
-### Launch:
+## Launch package ros_visualise:
+
+### from video file: 
+
 ```
 roslaunch ros_visualise main_video.launch
 ```
+
+<img src="files/from_file.png">
+
+### from camera raw file:
+
 ```
 roslaunch ros_visualise main_usb_cam.launch
 ```
 ```
-roslaunch ros_visualise time_rosbag.launch
-```
-### ros_visualise:
-
-## from video file: 
-
-<img src="files/from_file.png">
-
-```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 ```
-<img src="files/rqt.png">
-
-## from camera raw file:
 <img src="files/detected.png">
 <img src="files/connected.png">
 
-## from from rosbag (kitty dataset): 
+### from from rosbag (kitty dataset): 
 ```
 http://www.cvlibs.net/datasets/kitti/index.php
 ```
-<img src="files/kitti_rviz.png">
-
+```
+roslaunch ros_visualise time_rosbag.launch
+```
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
 ```
 
-<img src="files/kitti_node.png">
-
 <img src="files/on_rosbag.png">
 
+<img src="files/kitti_rviz.png">
