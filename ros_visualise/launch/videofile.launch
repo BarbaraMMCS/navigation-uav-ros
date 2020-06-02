@@ -1,0 +1,8 @@
+<launch>
+
+  <node name="video" pkg="ros_visualise" type="streamer.py" output="screen" >
+    <param name="topic_pub" value="/image_raw" />
+    <param name="video_path" value="/home/barbara/Videos/Drone/DJI_002.MOV" />
+  </node>
+
+</launch>

@@ -1,0 +1,26 @@
+<launch>
+
+  <node name="video" pkg="ros_visualise" type="streamer.py" output="screen" >
+    <param name="topic_pub" value="/image_raw" />
+    <param name="video_path" value="/home/barbara/Videos/Drone/DJI_0003.MOV" />
+    <param name="display" value="1" />
+    <param name="num_frames" value="1750" />
+  </node>
+
+  <node name="time" pkg="ros_visualise" type="time.py" output="screen" >
+    <param name="topic_sub" value="/image_raw" />
+    <param name="topic_pub" value="/controled_stream" />
+    <param name="fps" value="30" />
+  </node>
+
+  <node name="filters" pkg="ros_visualise" type="filters.py" output="screen" >
+    <param name="topic_sub" value="/controled_stream" />
+    <param name="topic_pub" value="/processed_image" />
+  </node>
+
+  <node name="edge_detector" pkg="ros_visualise" type="edge_detector.py" output="screen" >
+    <param name="topic_sub" value="/processed_image" />
+    <param name="topic_pub" value="/detected" />
+  </node>
+
+ </launch>

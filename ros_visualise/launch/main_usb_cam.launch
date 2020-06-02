@@ -1,4 +1,14 @@
 <launch>
+  <include file="$(find ros_visualise)/launch/edge_detector.launch"/>
+  <include file="$(find ros_visualise)/launch/filters.launch"/>
+
+  <node name="time" pkg="ros_visualise" type="time.py" output="screen" >
+    <param name="topic_sub" value="/usb_cam/image_raw" />
+    <param name="topic_pub" value="/controled_stream" />
+    <param name="fps" value="5" />
+  </node>
+
+
   <node name="usb_cam" pkg="usb_cam" type="usb_cam_node" output="screen" >
     <param name="video_device" value="/dev/video0" />
     <param name="image_width" value="640" />
@@ -9,9 +19,4 @@
     <param name="framerate" value="30"/>
   </node>
 
-  <node name="fps" pkg="ros_edge_detector" type="fps.py" output="screen" >
-    <param name="topic_sub" value="/usb_cam/image_raw" />
-    <param name="topic_pub" value="/controled_stream" />
-    <param name="fps" value="30" />
-  </node>
 </launch>

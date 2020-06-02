@@ -6,7 +6,7 @@ import rospy
 import cv2
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
-
+import imutils
 
 class Filter:
 
@@ -49,14 +49,14 @@ class Filter:
 
     def to_imgmsg(self, data, encoding="passthrough"):
         try:
-            data = data = self.bridge.cv2_to_imgmsg(data, encoding=encoding)
+            data = self.bridge.cv2_to_imgmsg(data, encoding=encoding)
         except CvBridgeError as e:
             print(e)
         return data
 
         # filters : gray and threshold
     def show(self, data, wait=1):
-        cv2.imshow(self.window, data)
+        cv2.imshow(self.window, imutils.resize(data, height=480))
         if cv2.waitKey(wait) & 0xFF == ord('q'):
             cv2.destroyAllWindows()
 

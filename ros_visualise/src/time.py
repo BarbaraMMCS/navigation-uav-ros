@@ -4,7 +4,7 @@ import rospy
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
 import cv2
-
+import imutils
 
 def nothing(x):
     pass
@@ -12,7 +12,7 @@ def nothing(x):
 
 def show(data):
     data = to_cv2(data)
-    cv2.imshow("video", data)
+    cv2.imshow("fps_control", imutils.resize(data, height=480))
     if cv2.waitKey(1) & 0xFF == ord('q'):
         cv2.destroyAllWindows()
 
@@ -24,17 +24,9 @@ def to_cv2(data):
         print(e)
     return data
 
-"""
-def slider():
-    try: 
-        fps = cv2.getTrackbarPos("FPS", "video")
-    except ZeroDivisionError as b:
-        print(b)
-    return float(fps)
-"""
 
 def slider():
-    fps = float(cv2.getTrackbarPos("FPS", "video"))
+    fps = float(cv2.getTrackbarPos("FPS", "fps_control"))
     if fps == 0:
         fps = 1
     else:
@@ -43,20 +35,13 @@ def slider():
 
 
 def callback(data):
-    pub = rospy.Publisher('time', Image, queue_size=1)
-   
+    topic_pub = rospy.get_param('~topic_pub')
+    pub = rospy.Publisher(topic_pub, Image, queue_size=1)  
     fps = slider()
-    rospy.loginfo("fps_slider: {0}".format(fps))
-
     frame_time = rospy.Duration(1/fps)
-
-
     begin_time = rospy.Time.now()
     end_time = frame_time + begin_time
-
     el = end_time - begin_time
-    rospy.loginfo("elapsed: {0}".format(el.to_sec()))
-
     while (rospy.Time.now() < end_time):
         pub.publish(data)
         show(data)
@@ -64,13 +49,15 @@ def callback(data):
 
 
 def subscriber():
-    rospy.Subscriber('/usb_cam/image_raw', Image, callback)
+    topic = rospy.get_param('~topic_sub')
+    rospy.Subscriber(topic, Image, callback)
 
 
 def main():
     rospy.init_node('time')
-    cv2.namedWindow("video")
-    cv2.createTrackbar("FPS", "video", 25, 30, nothing)
+    cv2.namedWindow("fps_control")
+    fps_param = rospy.get_param('~fps')
+    cv2.createTrackbar("FPS", "fps_control", fps_param, 30, nothing)
     subscriber()
     rospy.spin()
 

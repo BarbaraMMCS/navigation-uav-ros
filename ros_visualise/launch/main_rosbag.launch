@@ -1,0 +1,13 @@
+<launch>
+  <include file="$(find ros_visualise)/launch/edge_detector.launch"/>
+  <include file="$(find ros_visualise)/launch/filters.launch"/>
+
+  <node name="time" pkg="ros_visualise" type="time.py" output="screen" >
+    <param name="topic_sub" value="/cam03/image_raw" />
+    <param name="topic_pub" value="/controled_stream" />
+    <param name="fps" value="5" />
+  </node>
+
+  <node pkg="rosbag" type="play" name="player" output="screen" args="--clock /home/barbara/kitti_data/bagfiles/2011_09_26.bag"/>
+
+</launch>
