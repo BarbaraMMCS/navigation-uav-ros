@@ -12,9 +12,8 @@ Bachelor semester project 2 : part I
 
 ## Ros
 
-<img src="files/file.png" width="1080">
-          
-
+<img src="files/file.png" width="1080">     
+    
 ### Install this repository:
 ```
 cd ~/catkin_ws/src
@@ -24,44 +23,33 @@ git clone https://github.com/BarbaraMMCS/UAV_navigation_ROS.git
 cd ~/catkin_ws/
 
 catkin_make
-
 ```
 ### Packages: 
 
 vision_opencv : http://wiki.ros.org/vision_opencv
-
 usb_cam : http://wiki.ros.org/usb_cam
-
 kitti_to_rosbag : https://github.com/ethz-asl/kitti_to_rosbag
 
-## Launch package ros_visualise:
+## Launch package:
 
-### from video file: 
-
+### From video file: 
 ```
 roslaunch ros_visualise main_video.launch
 ```
-
 <img src="files/from_file.png">
 <img src="files/video02.png">
 
-### from camera raw file:
+### From camera device (webcam):
 ```
 roslaunch ros_visualise main_usb_cam.launch
-```
-```
-rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 ```
 <img src="files/webcam.png">
 <img src="files/detected.png">
 <img src="files/connected.png">
 
-### from rosbag: 
+### From rosbag (kitti dataset): 
 ```
 roslaunch ros_visualise main_rosbag.launch
-```
-```
-http://www.cvlibs.net/datasets/kitti/index.php
 ```
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
