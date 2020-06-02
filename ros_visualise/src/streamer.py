@@ -4,12 +4,11 @@
 
 import cv2
 import rospy
-from cv_bridge import CvBridge,CvBridgeError
-from sensor_msgs.msg import Image
 import imutils
-
 from imutils.video import WebcamVideoStream
 from imutils.video import FPS
+from cv_bridge import CvBridge,CvBridgeError
+from sensor_msgs.msg import Image
 
 class Video:
 
@@ -17,7 +16,6 @@ class Video:
         self.num_frames = rospy.get_param('~num_frames')
         self.display = rospy.get_param('~display')
         self.video_path = rospy.get_param('~video_path')
-
         self.bridge = CvBridge()
         self.vs = WebcamVideoStream(src=self.video_path).start()
         self.fps = FPS().start()
@@ -47,21 +45,17 @@ class Video:
     def stream(self):
         while self.fps._numFrames < self.num_frames:
             frame = self.vs.read()
-
-	    if self.display > 0:
+            if self.display > 0:
                 self.show(frame)
-
             self.publisher(frame)
-	    self.fps.update()
-
+        self.fps.update()
         self.fps.stop()
-
         cv2.destroyAllWindows()
         self.vs.stop()
 
 
 def main():
-    rospy.init_node("videofile", anonymous=True)
+    rospy.init_node("streamer", anonymous=True)
     video = Video()
     rospy.on_shutdown(video.clean_shutdown)
     video.stream()
@@ -72,4 +66,3 @@ if __name__ == '__main__':
         main()
     except rospy.ROSInterruptException:
         pass
-

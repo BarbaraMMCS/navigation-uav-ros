@@ -4,9 +4,9 @@
 
 import rospy
 import cv2
+import imutils
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
-import imutils
 
 
 class Filter:
@@ -40,7 +40,7 @@ class Filter:
             data = cv2.cvtColor(data, cv2.COLOR_BGR2GRAY)
         return data
 
-        # msgs conversion from topic subscribed to publish
+        # msgs conversion
     def to_cv2(self, data, encoding="passthrough"):
         try:
             data = self.bridge.imgmsg_to_cv2(data, desired_encoding=encoding)
@@ -55,6 +55,7 @@ class Filter:
             print(e)
         return data
 
+        # display data
     def show(self, data, wait=1):
         cv2.imshow(self.window, imutils.resize(data, height=480))
         if cv2.waitKey(wait) & 0xFF == ord('q'):

@@ -4,22 +4,20 @@
 
 import rospy
 import cv2
+import imutils
 from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
-import imutils
 
 
 class Edge:
 
     def __init__(self):
         self.bridge = CvBridge()
-
         self.min_val = 200
         self.max_val = 300
         self.aperture_size = 3
         self.gray = None
         self.window = "edge_detector"
-
         cv2.namedWindow(self.window)
         cv2.createTrackbar('Min', self.window, 200, 800, self.min_change)
         cv2.createTrackbar('Max', self.window, 300, 800, self.max_change)
