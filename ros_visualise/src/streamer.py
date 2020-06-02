@@ -44,25 +44,16 @@ class Video:
         data = self.to_imgmsg(data, encoding="bgr8")
         pub.publish(data)
 
-    def stream(self):
-
-        try:
+        def stream(self):
             while self.fps._numFrames < self.num_frames:
                 frame = self.vs.read()
-
             if self.display > 0:
                 self.show(frame)
-
             self.publisher(frame)
             self.fps.update()
-
             self.fps.stop()
-
             cv2.destroyAllWindows()
             self.vs.stop()
-
-        except rospy.ROSInterruptException:
-            pass
 
 
 def main():
