@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# video subscriber node d
+# ros node
 
 import rospy
 import cv2
@@ -8,23 +8,26 @@ from cv_bridge import CvBridge, CvBridgeError
 from sensor_msgs.msg import Image
 import imutils
 
+
 class Edge:
 
     def __init__(self):
         self.bridge = CvBridge()
+
         self.min_val = 200
         self.max_val = 300
         self.aperture_size = 3
         self.gray = None
         self.window = "edge_detector"
+
         cv2.namedWindow(self.window)
-        cv2.createTrackbar('Min', self.window, 0, 800, self.min_change)
-        cv2.createTrackbar('Max', self.window, 100, 800, self.max_change)
+        cv2.createTrackbar('Min', self.window, 200, 800, self.min_change)
+        cv2.createTrackbar('Max', self.window, 300, 800, self.max_change)
 
     def change_params(self, name, value):
-        self.edge_params = value
+        edge_params = value
         print(self.edge_params)
-        redraw_edges()
+        self.redraw_edges()
 
     def redraw_edges(self):
         edges = cv2.Canny(self.gray, self.min_val, self.max_val, self.aperture_size)
@@ -39,8 +42,6 @@ class Edge:
     def edge(self, data):
         self.gray = data
         self.redraw_edges()
-        if cv2.waitKey(1) & 0xFF == ord('q'):
-            cv2.destroyAllWindows()
         return data
 
     def show(self, data, wait=1):
