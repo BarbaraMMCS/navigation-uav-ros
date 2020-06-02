@@ -43,6 +43,7 @@ roslaunch ros_visualise main_video.launch
 ```
 
 <img src="files/from_file.png">
+<img src="files/video02.png">
 
 ### from camera raw file:
 ```
@@ -70,4 +71,6 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
 <img src="files/kitti_rviz.png">
 
 <img src="files/on_rosbag.png">
+<img src="files/tf.png">
+
 
