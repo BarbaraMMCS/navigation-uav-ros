@@ -57,7 +57,7 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 
 ### from rosbag: 
 ```
-roslaunch ros_visualise time_rosbag.launch
+roslaunch ros_visualise main_rosbag.launch
 ```
 ```
 http://www.cvlibs.net/datasets/kitti/index.php
