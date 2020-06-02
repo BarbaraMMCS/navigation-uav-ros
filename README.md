@@ -55,12 +55,12 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 <img src="files/detected.png">
 <img src="files/connected.png">
 
-### from from rosbag (kitty dataset): 
-```
-http://www.cvlibs.net/datasets/kitti/index.php
-```
+### from rosbag: 
 ```
 roslaunch ros_visualise time_rosbag.launch
+```
+```
+http://www.cvlibs.net/datasets/kitti/index.php
 ```
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
