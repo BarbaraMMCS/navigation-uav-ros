@@ -1,4 +1,4 @@
-# Project : Localization and detection of landmarks for supporting UAV navigation
+# Project: Localization and detection of landmarks for supporting UAV navigation
 
 Bachelor semester project 2 : part I
 
@@ -14,9 +14,8 @@ Bachelor semester project 2 : part I
 
 <img src="files/file.png" width="1080">
           
-### Install workspace
 
-### Install this repository :
+### Install this repository:
 ```
 cd ~/catkin_ws/src
 
@@ -33,17 +32,21 @@ vision_opencv : http://wiki.ros.org/vision_opencv
 
 usb_cam : http://wiki.ros.org/usb_cam
 
+kitti_to_rosbag : https://github.com/ethz-asl/kitti_to_rosbag
+
 ### Launch:
 ```
-roslaunch ros_visualise main.launch
+roslaunch ros_visualise main_video.launch
 ```
 ```
-roslaunch ros_edge_detector main.launch
+roslaunch ros_edge_detector main_usb_cam.launch
 ```
 ```
-roslaunch ros_fps time.launch
+roslaunch ros_fps time_rosbag.launch
 ```
 ### ros_visualise:
+
+## from video file: 
 
 <img src="files/from_file.png">
 
@@ -52,14 +55,11 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 ```
 <img src="files/rqt.png">
 
-### ros_edge_detector:
-<img src="files/edge.png">
+## from camera raw file:
 <img src="files/detected.png">
-<img src="files/both.png">
-<img src="files/all.png">
 <img src="files/connected.png">
 
-## Kitty data set: 
+## from from rosbag (kitty dataset): 
 ```
 http://www.cvlibs.net/datasets/kitti/index.php
 ```
@@ -71,12 +71,5 @@ rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
 
 <img src="files/kitti_node.png">
 
-
 <img src="files/on_rosbag.png">
-
-
-
-
-
-<img src="files/image.png">
 
