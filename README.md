@@ -39,10 +39,10 @@ kitti_to_rosbag : https://github.com/ethz-asl/kitti_to_rosbag
 roslaunch ros_visualise main_video.launch
 ```
 ```
-roslaunch ros_edge_detector main_usb_cam.launch
+roslaunch ros_visualise main_usb_cam.launch
 ```
 ```
-roslaunch ros_fps time_rosbag.launch
+roslaunch ros_visualise time_rosbag.launch
 ```
 ### ros_visualise:
 
