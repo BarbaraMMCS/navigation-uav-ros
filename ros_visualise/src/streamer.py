@@ -1,21 +1,19 @@
 #!/usr/bin/env python
 
-# video publisher node a
+# video streamer from file
 
 import cv2
 import rospy
 from cv_bridge import CvBridge,CvBridgeError
 from sensor_msgs.msg import Image
 import imutils
-import datetime
-from threading import Thread
 from imutils.video import WebcamVideoStream
 from imutils.video import FPS
+
 
 class Video:
 
     def __init__(self):
-
         self.num_frames = rospy.get_param('~num_frames')
         self.display = rospy.get_param('~display')
         self.video_path = rospy.get_param('~video_path')
@@ -47,23 +45,24 @@ class Video:
         pub.publish(data)
 
     def stream(self):
-        while self.fps._numFrames < self.num_frames:
-            frame = self.vs.read()
 
-	    if self.display > 0:
+        try:
+            while self.fps._numFrames < self.num_frames:
+                frame = self.vs.read()
+
+            if self.display > 0:
                 self.show(frame)
 
             self.publisher(frame)
-	    self.fps.update()
+            self.fps.update()
 
-        self.fps.stop()
-        print("[INFO] elasped time: {:.2f}".format(self.fps.elapsed()))
-        print("[INFO] approx. FPS: {:.2f}".format(self.fps.fps()))
+            self.fps.stop()
 
-        cv2.destroyAllWindows()
-        self.vs.stop()
+            cv2.destroyAllWindows()
+            self.vs.stop()
 
-
+        except rospy.ROSInterruptException:
+            pass
 
 
 def main():
