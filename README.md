@@ -45,13 +45,13 @@ roslaunch ros_visualise main_video.launch
 <img src="files/from_file.png">
 
 ### from camera raw file:
-
 ```
 roslaunch ros_visualise main_usb_cam.launch
 ```
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/image.rviz
 ```
+<img src="files/webcam.png">
 <img src="files/detected.png">
 <img src="files/connected.png">
 
@@ -65,6 +65,8 @@ http://www.cvlibs.net/datasets/kitti/index.php
 ```
 rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
 ```
+<img src="files/rosbag.png">
+
 <img src="files/kitti_rviz.png">
 
 <img src="files/on_rosbag.png">
