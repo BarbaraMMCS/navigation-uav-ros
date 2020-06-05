@@ -52,9 +52,8 @@ roslaunch ros_visualise main_video.launch
 ```
 roslaunch ros_visualise main_usb_cam.launch
 ```
-<img src="files/webcam.png">
-<img src="files/detected.png">
-<img src="files/connected.png">
+<img src="files/webcam23.png">
+<img src="files/usbcamgraph.png">
 
 ### From rosbag (kitti dataset): 
 ```
@@ -62,7 +61,7 @@ roslaunch ros_visualise main_rosbag.launch
 ```
 <img src="files/tf.png">
 <img src="files/rvizkitti.png">
-<img src="files/on_rosbag.png">
+<img src="files/rosbag_graph.png">
 
 ### Navigation (Husky robot)
 http://wiki.ros.org/Robots/Husky
@@ -71,5 +70,5 @@ roslaunch ros_visualise main_path.launch
 ```
 <img src="files/path3.png">
 <img src="files/gazebo.png">
-<img src="files/path1.png">
+<img src="files/huskypathgraph.png">
 
