@@ -60,7 +60,6 @@ roslaunch ros_visualise main_usb_cam.launch
 ```
 roslaunch ros_visualise main_rosbag.launch
 ```
-<img src="files/rosbag.png">
 <img src="files/on_rosbag.png">
 <img src="files/tf.png">
 <img src="files/rvizkitti.png">
