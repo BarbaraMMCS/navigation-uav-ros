@@ -46,7 +46,7 @@ export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.ga
 roslaunch ros_visualise main_video.launch
 ```
 <img src="files/videofile.png">
-<img src="files/video02.png">
+<img src="files/videofilegraph.png">
 
 ### From camera device (webcam):
 ```
