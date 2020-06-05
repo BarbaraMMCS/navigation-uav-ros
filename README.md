@@ -32,10 +32,16 @@ usb_cam : http://wiki.ros.org/usb_cam
 
 kitti_to_rosbag : https://github.com/ethz-asl/kitti_to_rosbag
 
+Husky robot:
+```
+sudo apt-get install ros-melodic-husky-simulator ros-melodic-husky-navigation ros-melodic-husky-gazebo ros-melodic-husky-viz
+
+export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro
+```
 
 ## Launch package:
 
-### From video file: 
+### From video (drone file): 
 ```
 roslaunch ros_visualise main_video.launch
 ```
@@ -60,19 +66,11 @@ roslaunch ros_visualise main_rosbag.launch
 <img src="files/kitti_rviz.png">
 
 ### Navigation (Husky robot)
-```
 http://wiki.ros.org/Robots/Husky
-```
-```
-sudo apt-get install ros-melodic-husky-simulator ros-melodic-husky-navigation ros-melodic-husky-gazebo ros-melodic-husky-viz
-```
-```
-export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro
-```
 ```
 roslaunch ros_visualise main_path.launch
 ```
 <img src="files/path3.png">
 <img src="files/gazebo.png">
-<img src="files/path.png">
+<img src="files/path1.png">
 
