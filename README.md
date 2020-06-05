@@ -12,7 +12,7 @@ Bachelor semester project 2 : part I
 
 ## Ros:
 
-<img src="files/file.png" width="1080">
+<img src="files/ros.png" width="1080">
     
 ### Install this repository:
 ```
@@ -45,7 +45,7 @@ export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.ga
 ```
 roslaunch ros_visualise main_video.launch
 ```
-<img src="files/from_file.png">
+<img src="files/videofile.png">
 <img src="files/video02.png">
 
 ### From camera device (webcam):
