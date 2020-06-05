@@ -1,4 +1,5 @@
 <launch>
+
   <include file="$(find ros_visualise)/launch/edge_detector.launch"/>
   <include file="$(find ros_visualise)/launch/filters.launch"/>
 
@@ -8,6 +9,10 @@
     <param name="fps" value="5" />
   </node>
 
-  <node pkg="rosbag" type="play" name="player" output="screen" args="--clock /home/barbara/kitti_data/bagfiles/2011_09_26.bag"/>
+  <node name="player" pkg="rosbag" type="play" output="screen" args="--clock /home/barbara/kitti_data/bagfiles/2011_09_26.bag"/>
+
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find ros_visualise)/config/kitti.rviz" output="screen"/>
+
+  <node name = "rqt_gui" pkg = "rqt_gui" type = "rqt_gui" respawn = "false" output = "screen" args = "--perspective-file $(find ros_visualise)/config/kitti.perspective"/>
 
 </launch>

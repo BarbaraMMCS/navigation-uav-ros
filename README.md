@@ -12,7 +12,7 @@ Bachelor semester project 2 : part I
 
 ## Ros:
 
-<img src="files/file.png" width="1080">     
+<img src="files/file.png" width="1080">
     
 ### Install this repository:
 ```
@@ -31,6 +31,7 @@ vision_opencv : http://wiki.ros.org/vision_opencv
 usb_cam : http://wiki.ros.org/usb_cam
 
 kitti_to_rosbag : https://github.com/ethz-asl/kitti_to_rosbag
+
 
 ## Launch package:
 
@@ -53,10 +54,25 @@ roslaunch ros_visualise main_usb_cam.launch
 ```
 roslaunch ros_visualise main_rosbag.launch
 ```
-```
-rosrun rviz rviz -d `rospack find ros_visualise`/rviz/kitti.rviz
-```
 <img src="files/rosbag.png">
 <img src="files/on_rosbag.png">
 <img src="files/tf.png">
 <img src="files/kitti_rviz.png">
+
+### Navigation (Husky robot)
+```
+http://wiki.ros.org/Robots/Husky
+```
+```
+sudo apt-get install ros-melodic-husky-simulator ros-melodic-husky-navigation ros-melodic-husky-gazebo ros-melodic-husky-viz
+```
+```
+export HUSKY_GAZEBO_DESCRIPTION=$(rospack find husky_gazebo)/urdf/description.gazebo.xacro
+```
+```
+roslaunch ros_visualise main_path.launch
+```
+<img src="files/path3.png">
+<img src="files/gazebo.png">
+<img src="files/path.png">
+
